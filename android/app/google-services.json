@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "156682345464",
+    "project_id": "new-smart-water",
+    "storage_bucket": "new-smart-water.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156682345464:android:fef8e28a2af91c55a3540d",
+        "android_client_info": {
+          "package_name": "uz.dilshodjon216.smart_water"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156682345464-6uevbkobf1gutaid150jmnb5u0b9k100.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.dilshodjon216.smart_water",
+            "certificate_hash": "160c26fc4daac94d30e25923679b133c163723c5"
+          }
+        },
+        {
+          "client_id": "156682345464-0c5tihn6pm9l7208ak146m0pj8m1t54u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJXxiJB_gq3MfqT1Th9wpXa9-20R01K9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156682345464-0c5tihn6pm9l7208ak146m0pj8m1t54u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

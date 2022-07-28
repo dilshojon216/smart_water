@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "tum_nomi": "To‘rtko‘l",
+    "vil_id": 1
+  },
+  {
+    "id": 2,
+    "tum_nomi": "Beruniy",
+    "vil_id": 1
+  },
+  {
+    "id": 3,
+    "tum_nomi": "Ellikqal’a",
+    "vil_id": 1
+  },
+  {
+    "id": 4,
+    "tum_nomi": "Amudaryo",
+    "vil_id": 1
+  },
+  {
+    "id": 5,
+    "tum_nomi": "Xo‘jayli",
+    "vil_id": 1
+  },
+  {
+    "id": 6,
+    "tum_nomi": "Taxiatash",
+    "vil_id": 1
+  },
+  {
+    "id": 7,
+    "tum_nomi": "Sho‘manoy",
+    "vil_id": 1
+  },
+  {
+    "id": 8,
+    "tum_nomi": "Qonliko‘l",
+    "vil_id": 1
+  },
+  {
+    "id": 9,
+    "tum_nomi": "Qo‘ng‘irot",
+    "vil_id": 1
+  },
+  {
+    "id": 10,
+    "tum_nomi": "Nukus",
+    "vil_id": 1
+  },
+  {
+    "id": 11,
+    "tum_nomi": "Kegeyli",
+    "vil_id": 1
+  },
+  {
+    "id": 12,
+    "tum_nomi": "Chimboy",
+    "vil_id": 1
+  },
+  {
+    "id": 13,
+    "tum_nomi": "Qorao‘zak",
+    "vil_id": 1
+  },
+  {
+    "id": 14,
+    "tum_nomi": "Taxtako‘pir",
+    "vil_id": 1
+  },
+  {
+    "id": 15,
+    "tum_nomi": "Mo‘ynoq",
+    "vil_id": 1
+  },
+  {
+    "id": 164,
+    "tum_nomi": "Bo‘zatov",
+    "vil_id": 1
+  },
+  {
+    "id": 150,
+    "tum_nomi": "Andijon ",
+    "vil_id": 2
+  },
+  {
+    "id": 151,
+    "tum_nomi": "Asaka",
+    "vil_id": 2
+  },
+  {
+    "id": 152,
+    "tum_nomi": "Baliqchi",
+    "vil_id": 2
+  },
+  {
+    "id": 153,
+    "tum_nomi": "Buloqboshi",
+    "vil_id": 2
+  },
+  {
+    "id": 154,
+    "tum_nomi": "Bo‘z",
+    "vil_id": 2
+  },
+  {
+    "id": 155,
+    "tum_nomi": "Jalaquduq",
+    "vil_id": 2
+  },
+  {
+    "id": 156,
+    "tum_nomi": "Izboskan",
+    "vil_id": 2
+  },
+  {
+    "id": 157,
+    "tum_nomi": "Ulug‘nor",
+    "vil_id": 2
+  },
+  {
+    "id": 158,
+    "tum_nomi": "Marxamat",
+    "vil_id": 2
+  },
+  {
+    "id": 159,
+    "tum_nomi": "Oltinko‘l",
+    "vil_id": 2
+  },
+  {
+    "id": 160,
+    "tum_nomi": "Paxtaobod",
+    "vil_id": 2
+  },
+  {
+    "id": 161,
+    "tum_nomi": "Xo‘jaobod",
+    "vil_id": 2
+  },
+  {
+    "id": 162,
+    "tum_nomi": "Shahrixon",
+    "vil_id": 2
+  },
+  {
+    "id": 163,
+    "tum_nomi": "Qo‘rg‘ontepa",
+    "vil_id": 2
+  },
+  {
+    "id": 17,
+    "tum_nomi": "Buxoro",
+    "vil_id": 3
+  },
+  {
+    "id": 18,
+    "tum_nomi": "Vobkent",
+    "vil_id": 3
+  },
+  {
+    "id": 19,
+    "tum_nomi": "Jondor",
+    "vil_id": 3
+  },
+  {
+    "id": 20,
+    "tum_nomi": "Kogon",
+    "vil_id": 3
+  },
+  {
+    "id": 21,
+    "tum_nomi": "Qorako‘l",
+    "vil_id": 3
+  },
+  {
+    "id": 22,
+    "tum_nomi": "Q-bozor",
+    "vil_id": 3
+  },
+  {
+    "id": 23,
+    "tum_nomi": "Olot",
+    "vil_id": 3
+  },
+  {
+    "id": 24,
+    "tum_nomi": "Peshku",
+    "vil_id": 3
+  },
+  {
+    "id": 25,
+    "tum_nomi": "Romitan",
+    "vil_id": 3
+  },
+  {
+    "id": 26,
+    "tum_nomi": "Shofirkon",
+    "vil_id": 3
+  },
+  {
+    "id": 27,
+    "tum_nomi": "G‘ijduvon",
+    "vil_id": 3
+  },
+  {
+    "id": 28,
+    "tum_nomi": "Buxoro sh",
+    "vil_id": 3
+  },
+  {
+    "id": 29,
+    "tum_nomi": "Arnasoy",
+    "vil_id": 4
+  },
+  {
+    "id": 30,
+    "tum_nomi": "Baxmal",
+    "vil_id": 4
+  },
+  {
+    "id": 31,
+    "tum_nomi": "G‘allaorol",
+    "vil_id": 4
+  },
+  {
+    "id": 32,
+    "tum_nomi": "Sh.Rashidov",
+    "vil_id": 4
+  },
+  {
+    "id": 33,
+    "tum_nomi": "Do‘stlik",
+    "vil_id": 4
+  },
+  {
+    "id": 34,
+    "tum_nomi": "Zomin",
+    "vil_id": 4
+  },
+  {
+    "id": 35,
+    "tum_nomi": "Zarbdor",
+    "vil_id": 4
+  },
+  {
+    "id": 36,
+    "tum_nomi": "Zafarobod",
+    "vil_id": 4
+  },
+  {
+    "id": 37,
+    "tum_nomi": "Mirzacho‘l",
+    "vil_id": 4
+  },
+  {
+    "id": 38,
+    "tum_nomi": "Paxtakor",
+    "vil_id": 4
+  },
+  {
+    "id": 39,
+    "tum_nomi": "Forish",
+    "vil_id": 4
+  },
+  {
+    "id": 40,
+    "tum_nomi": "Yangiobod",
+    "vil_id": 4
+  },
+  {
+    "id": 41,
+    "tum_nomi": "G‘uzor",
+    "vil_id": 5
+  },
+  {
+    "id": 42,
+    "tum_nomi": "Dehqonobod",
+    "vil_id": 5
+  },
+  {
+    "id": 43,
+    "tum_nomi": "Qarshi",
+    "vil_id": 5
+  },
+  {
+    "id": 44,
+    "tum_nomi": "Koson",
+    "vil_id": 5
+  },
+  {
+    "id": 45,
+    "tum_nomi": "Qamashi",
+    "vil_id": 5
+  },
+  {
+    "id": 46,
+    "tum_nomi": "Kitob",
+    "vil_id": 5
+  },
+  {
+    "id": 47,
+    "tum_nomi": "Mirishkor",
+    "vil_id": 5
+  },
+  {
+    "id": 48,
+    "tum_nomi": "Muborak",
+    "vil_id": 5
+  },
+  {
+    "id": 49,
+    "tum_nomi": "Nishon",
+    "vil_id": 5
+  },
+  {
+    "id": 50,
+    "tum_nomi": "Kasbi",
+    "vil_id": 5
+  },
+  {
+    "id": 51,
+    "tum_nomi": "Chiroqchi",
+    "vil_id": 5
+  },
+  {
+    "id": 52,
+    "tum_nomi": "Shahrisabz",
+    "vil_id": 5
+  },
+  {
+    "id": 53,
+    "tum_nomi": "Yakkabog‘",
+    "vil_id": 5
+  },
+  {
+    "id": 54,
+    "tum_nomi": "Karmana",
+    "vil_id": 6
+  },
+  {
+    "id": 55,
+    "tum_nomi": "Konimex",
+    "vil_id": 6
+  },
+  {
+    "id": 56,
+    "tum_nomi": "Qiziltepa",
+    "vil_id": 6
+  },
+  {
+    "id": 57,
+    "tum_nomi": "Navbahor",
+    "vil_id": 6
+  },
+  {
+    "id": 58,
+    "tum_nomi": "Nurota",
+    "vil_id": 6
+  },
+  {
+    "id": 59,
+    "tum_nomi": "Xatirchi",
+    "vil_id": 6
+  },
+  {
+    "id": 60,
+    "tum_nomi": "Mingbulok",
+    "vil_id": 7
+  },
+  {
+    "id": 61,
+    "tum_nomi": "Kosonsoy",
+    "vil_id": 7
+  },
+  {
+    "id": 62,
+    "tum_nomi": "Namangan",
+    "vil_id": 7
+  },
+  {
+    "id": 63,
+    "tum_nomi": "Norin",
+    "vil_id": 7
+  },
+  {
+    "id": 64,
+    "tum_nomi": "Pop",
+    "vil_id": 7
+  },
+  {
+    "id": 65,
+    "tum_nomi": "Turaqurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 66,
+    "tum_nomi": "Uychi",
+    "vil_id": 7
+  },
+  {
+    "id": 67,
+    "tum_nomi": "Uchkurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 68,
+    "tum_nomi": "Chortoq",
+    "vil_id": 7
+  },
+  {
+    "id": 69,
+    "tum_nomi": "Chust",
+    "vil_id": 7
+  },
+  {
+    "id": 70,
+    "tum_nomi": "Yangiqurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 60,
+    "tum_nomi": "Mingbulok",
+    "vil_id": 7
+  },
+  {
+    "id": 61,
+    "tum_nomi": "Kosonsoy",
+    "vil_id": 7
+  },
+  {
+    "id": 62,
+    "tum_nomi": "Namangan",
+    "vil_id": 7
+  },
+  {
+    "id": 63,
+    "tum_nomi": "Norin",
+    "vil_id": 7
+  },
+  {
+    "id": 64,
+    "tum_nomi": "Pop",
+    "vil_id": 7
+  },
+  {
+    "id": 65,
+    "tum_nomi": "Turaqurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 66,
+    "tum_nomi": "Uychi",
+    "vil_id": 7
+  },
+  {
+    "id": 67,
+    "tum_nomi": "Uchkurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 68,
+    "tum_nomi": "Chortoq",
+    "vil_id": 7
+  },
+  {
+    "id": 69,
+    "tum_nomi": "Chust",
+    "vil_id": 7
+  },
+  {
+    "id": 70,
+    "tum_nomi": "Yangiqurgon",
+    "vil_id": 7
+  },
+  {
+    "id": 85,
+    "tum_nomi": "Boyovut",
+    "vil_id": 9
+  },
+  {
+    "id": 86,
+    "tum_nomi": "Guliston",
+    "vil_id": 9
+  },
+  {
+    "id": 87,
+    "tum_nomi": "Mirzaobod",
+    "vil_id": 9
+  },
+  {
+    "id": 88,
+    "tum_nomi": "Oqoltin",
+    "vil_id": 9
+  },
+  {
+    "id": 89,
+    "tum_nomi": "Sardoba",
+    "vil_id": 9
+  },
+  {
+    "id": 90,
+    "tum_nomi": "Sayxunobod",
+    "vil_id": 9
+  },
+  {
+    "id": 91,
+    "tum_nomi": "Sirdaryo",
+    "vil_id": 9
+  },
+  {
+    "id": 92,
+    "tum_nomi": "Xovos",
+    "vil_id": 9
+  },
+  {
+    "id": 93,
+    "tum_nomi": "Angor",
+    "vil_id": 10
+  },
+  {
+    "id": 94,
+    "tum_nomi": "Bandixon",
+    "vil_id": 10
+  },
+  {
+    "id": 95,
+    "tum_nomi": "Boysun",
+    "vil_id": 10
+  },
+  {
+    "id": 96,
+    "tum_nomi": "Denov",
+    "vil_id": 10
+  },
+  {
+    "id": 97,
+    "tum_nomi": "Jarqo‘rg‘on",
+    "vil_id": 10
+  },
+  {
+    "id": 98,
+    "tum_nomi": "Qiziriq",
+    "vil_id": 10
+  },
+  {
+    "id": 99,
+    "tum_nomi": "Qumqurg‘on",
+    "vil_id": 10
+  },
+  {
+    "id": 100,
+    "tum_nomi": "Muzrobod",
+    "vil_id": 10
+  },
+  {
+    "id": 101,
+    "tum_nomi": "Oltinsoy",
+    "vil_id": 10
+  },
+  {
+    "id": 102,
+    "tum_nomi": "Sariosiyo",
+    "vil_id": 10
+  },
+  {
+    "id": 103,
+    "tum_nomi": "Termiz",
+    "vil_id": 10
+  },
+  {
+    "id": 104,
+    "tum_nomi": "Uzun",
+    "vil_id": 10
+  },
+  {
+    "id": 105,
+    "tum_nomi": "Sherobod",
+    "vil_id": 10
+  },
+  {
+    "id": 106,
+    "tum_nomi": "Sho‘rchi",
+    "vil_id": 10
+  },
+  {
+    "id": 107,
+    "tum_nomi": "Oqqo‘rg‘on",
+    "vil_id": 11
+  },
+  {
+    "id": 108,
+    "tum_nomi": "Oxangaron",
+    "vil_id": 11
+  },
+  {
+    "id": 109,
+    "tum_nomi": "Bekabod",
+    "vil_id": 11
+  },
+  {
+    "id": 110,
+    "tum_nomi": "Bo‘ka",
+    "vil_id": 11
+  },
+  {
+    "id": 111,
+    "tum_nomi": "Bo‘stonliq",
+    "vil_id": 11
+  },
+  {
+    "id": 112,
+    "tum_nomi": "yuqori Chirchiq",
+    "vil_id": 11
+  },
+  {
+    "id": 113,
+    "tum_nomi": "O‘rta Chirchiq",
+    "vil_id": 11
+  },
+  {
+    "id": 114,
+    "tum_nomi": "Quyi Chirchiq",
+    "vil_id": 11
+  },
+  {
+    "id": 115,
+    "tum_nomi": "Zangiota",
+    "vil_id": 11
+  },
+  {
+    "id": 116,
+    "tum_nomi": "Qibray",
+    "vil_id": 11
+  },
+  {
+    "id": 117,
+    "tum_nomi": "Parkent",
+    "vil_id": 11
+  },
+  {
+    "id": 118,
+    "tum_nomi": "Piskent",
+    "vil_id": 11
+  },
+  {
+    "id": 119,
+    "tum_nomi": "Toshkent",
+    "vil_id": 11
+  },
+  {
+    "id": 120,
+    "tum_nomi": "Chinoz",
+    "vil_id": 11
+  },
+  {
+    "id": 121,
+    "tum_nomi": "Yangiyo‘l",
+    "vil_id": 11
+  },
+  {
+    "id": 122,
+    "tum_nomi": "Quvasay",
+    "vil_id": 12
+  },
+  {
+    "id": 123,
+    "tum_nomi": "Farg‘ona sh",
+    "vil_id": 12
+  },
+  {
+    "id": 124,
+    "tum_nomi": "Beshariq",
+    "vil_id": 12
+  },
+  {
+    "id": 125,
+    "tum_nomi": "Bog‘dod",
+    "vil_id": 12
+  },
+  {
+    "id": 126,
+    "tum_nomi": "Buvayda",
+    "vil_id": 12
+  },
+  {
+    "id": 127,
+    "tum_nomi": "Dang‘ara",
+    "vil_id": 12
+  },
+  {
+    "id": 128,
+    "tum_nomi": "Yozyovon",
+    "vil_id": 12
+  },
+  {
+    "id": 129,
+    "tum_nomi": "Quva",
+    "vil_id": 12
+  },
+  {
+    "id": 130,
+    "tum_nomi": "Oltiariq",
+    "vil_id": 12
+  },
+  {
+    "id": 131,
+    "tum_nomi": "Qo‘shtepa",
+    "vil_id": 12
+  },
+  {
+    "id": 132,
+    "tum_nomi": "Rishton",
+    "vil_id": 12
+  },
+  {
+    "id": 133,
+    "tum_nomi": "So‘x",
+    "vil_id": 12
+  },
+  {
+    "id": 134,
+    "tum_nomi": "Toshloq",
+    "vil_id": 12
+  },
+  {
+    "id": 135,
+    "tum_nomi": "O‘zbekiston",
+    "vil_id": 12
+  },
+  {
+    "id": 136,
+    "tum_nomi": "Uchko‘prik",
+    "vil_id": 12
+  },
+  {
+    "id": 137,
+    "tum_nomi": "Farg‘ona t",
+    "vil_id": 12
+  },
+  {
+    "id": 138,
+    "tum_nomi": "Furqat",
+    "vil_id": 12
+  },
+  {
+    "id": 139,
+    "tum_nomi": "Bog‘ot",
+    "vil_id": 13
+  },
+  {
+    "id": 140,
+    "tum_nomi": "Gurlan",
+    "vil_id": 13
+  },
+  {
+    "id": 141,
+    "tum_nomi": "Qo‘shko‘pir",
+    "vil_id": 13
+  },
+  {
+    "id": 142,
+    "tum_nomi": "Urganch",
+    "vil_id": 13
+  },
+  {
+    "id": 143,
+    "tum_nomi": "Xozarasp",
+    "vil_id": 13
+  },
+  {
+    "id": 144,
+    "tum_nomi": "Xonqa",
+    "vil_id": 13
+  },
+  {
+    "id": 145,
+    "tum_nomi": "Xiva",
+    "vil_id": 13
+  },
+  {
+    "id": 146,
+    "tum_nomi": "Shovot",
+    "vil_id": 13
+  },
+  {
+    "id": 147,
+    "tum_nomi": "Yangiariq",
+    "vil_id": 13
+  },
+  {
+    "id": 148,
+    "tum_nomi": "Yangibozor",
+    "vil_id": 13
+  },
+  {
+    "id": 165,
+    "tum_nomi": "Tuprokkal’a",
+    "vil_id": 13
+  }
+]
