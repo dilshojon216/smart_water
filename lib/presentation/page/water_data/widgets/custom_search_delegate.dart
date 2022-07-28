@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import '../../../../data/model/water_info.dart';
 import '../../../cubit/water_all_data_cubit/water_all_data_cubit.dart';
@@ -181,7 +182,7 @@ class CustomSearchDelegate extends SearchDelegate {
                           PopupMenuItem(
                             value: '1',
                             child: Text(
-                              'Barcha ma`lumotlar',
+                              LocaleKeys.search_water_text_1.tr(),
                               style: GoogleFonts.roboto(
                                   fontSize: 18.0,
                                   color: Colors.black,
@@ -191,7 +192,7 @@ class CustomSearchDelegate extends SearchDelegate {
                           PopupMenuItem(
                             value: '2',
                             child: Text(
-                              'Mqtt ma`lumotlari',
+                              LocaleKeys.search_water_text_2.tr(),
                               style: GoogleFonts.roboto(
                                   fontSize: 18.0,
                                   color: Colors.black,
@@ -201,7 +202,7 @@ class CustomSearchDelegate extends SearchDelegate {
                           PopupMenuItem(
                             value: '3',
                             child: Text(
-                              'Qurilmadan  kelgan habarlar',
+                              LocaleKeys.search_water_text_3.tr(),
                               style: GoogleFonts.roboto(
                                   fontSize: 18.0,
                                   color: Colors.black,
@@ -236,7 +237,7 @@ class CustomSearchDelegate extends SearchDelegate {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Suv sathi:",
+                        LocaleKeys.mqtt_all_water_text_1.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -268,7 +269,7 @@ class CustomSearchDelegate extends SearchDelegate {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Suv sarfi:",
+                        LocaleKeys.mqtt_all_water_text_2.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -300,7 +301,7 @@ class CustomSearchDelegate extends SearchDelegate {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Vaqti:",
+                        LocaleKeys.mqtt_all_water_text_3.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,

@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import '../../../../core/other/status_bar.dart';
 import 'more_mqtt_data.dart';
@@ -73,11 +75,11 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
     setState(() {
       int totulor = widget.waterMqttModels.length;
       dataMap = {
-        'Bugun ishlagan ': workingDevices.toDouble(),
-        'Bir hafta oraliqda ishlagan ': weekendDevices.toDouble(),
-        'Bir oy oraliqda ishlagan ': monthDevices.toDouble(),
-        'Uzoq muddat oldin ishlagan ': monthDevices.toDouble(),
-        'Umuman ishlamagan': noDataDevices.toDouble(),
+        '${LocaleKeys.dashboard_mqtt_text_1.tr()} ': workingDevices.toDouble(),
+        '${LocaleKeys.dashboard_mqtt_text_2.tr()} ': weekendDevices.toDouble(),
+        '${LocaleKeys.dashboard_mqtt_text_3.tr()} ': monthDevices.toDouble(),
+        '${LocaleKeys.dashboard_mqtt_text_4.tr()} ': monthDevices.toDouble(),
+        '${LocaleKeys.dashboard_mqtt_text_5.tr()} ': noDataDevices.toDouble(),
       };
       workingList = workingList1;
       weekendList = weekendList1;
@@ -131,7 +133,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
         ),
         elevation: 2,
         title: Text(
-          "Maʼlumotlar tahlilli",
+          LocaleKeys.water_data_text_2.tr(),
           style: GoogleFonts.roboto(
               color: Theme.of(context).primaryColor, fontSize: 16),
         ),
@@ -151,7 +153,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "Qurilmalarning umumiy xolati",
+                        LocaleKeys.dashboard_mqtt_text_6.tr(),
                         style: GoogleFonts.roboto(
                           color: Theme.of(context).primaryColor,
                           fontSize: 16,
@@ -200,7 +202,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                 Expanded(
                     flex: 3,
                     child: AutoSizeText(
-                      "Bugun ishlagan",
+                      LocaleKeys.dashboard_mqtt_text_1.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[0],
                         fontSize: 18,
@@ -217,12 +219,13 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MoreMqttInfoData(
-                                        title: "Bugun ishlagan",
+                                        title: LocaleKeys.dashboard_mqtt_text_1
+                                            .tr(),
                                         waterMqttModels: workingList,
                                       )));
                         },
                         child: Text(
-                          "Batafsil",
+                          LocaleKeys.more_btn_text.tr(),
                           style: GoogleFonts.roboto(
                             color: colorList[0],
                             fontSize: 16,
@@ -255,7 +258,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                 Expanded(
                     flex: 3,
                     child: AutoSizeText(
-                      "Bir hafta oraliqda ishlagan",
+                      LocaleKeys.dashboard_mqtt_text_2.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[1],
                         fontSize: 18,
@@ -272,12 +275,13 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MoreMqttInfoData(
-                                        title: "Bir hafta oraliqda ishlagan",
+                                        title: LocaleKeys.dashboard_mqtt_text_2
+                                            .tr(),
                                         waterMqttModels: weekendList,
                                       )));
                         },
                         child: Text(
-                          "Batafsil",
+                          LocaleKeys.more_btn_text.tr(),
                           style: GoogleFonts.roboto(
                             color: colorList[1],
                             fontSize: 16,
@@ -310,7 +314,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                 Expanded(
                     flex: 3,
                     child: AutoSizeText(
-                      "Bir oy oraliqda ishlagan",
+                      LocaleKeys.dashboard_mqtt_text_3.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[2],
                         fontSize: 18,
@@ -326,12 +330,13 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MoreMqttInfoData(
-                                    title: "Bir oy oraliqda ishlagan",
+                                    title:
+                                        LocaleKeys.dashboard_mqtt_text_3.tr(),
                                     waterMqttModels: monthList,
                                   )));
                     },
                     child: Text(
-                      "Batafsil",
+                      LocaleKeys.more_btn_text.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[2],
                         fontSize: 16,
@@ -366,7 +371,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                 Expanded(
                     flex: 3,
                     child: AutoSizeText(
-                      "Uzoq muddat oldin ishlagan",
+                      LocaleKeys.dashboard_mqtt_text_4.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[3],
                         fontSize: 18,
@@ -382,12 +387,13 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MoreMqttInfoData(
-                                    title: "Uzoq muddat oldin ishlagan",
+                                    title:
+                                        LocaleKeys.dashboard_mqtt_text_4.tr(),
                                     waterMqttModels: longTimeworkingList,
                                   )));
                     },
                     child: Text(
-                      "Batafsil",
+                      LocaleKeys.more_btn_text.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[3],
                         fontSize: 16,
@@ -422,7 +428,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                 Expanded(
                     flex: 3,
                     child: AutoSizeText(
-                      "Umuman ishlamagan",
+                      LocaleKeys.dashboard_mqtt_text_5.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[4],
                         fontSize: 18,
@@ -435,7 +441,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
                     style: TextButton.styleFrom(backgroundColor: Colors.white),
                     onPressed: () {},
                     child: Text(
-                      "Batafsil",
+                      LocaleKeys.more_btn_text.tr(),
                       style: GoogleFonts.roboto(
                         color: colorList[4],
                         fontSize: 16,
@@ -472,7 +478,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
     return [
       DataColumn(
         label: Text(
-          "Nomi:",
+          LocaleKeys.dashboard_mqtt_text_7.tr(),
           style: GoogleFonts.roboto(
             fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -482,7 +488,7 @@ class _DashbordMqttWaterState extends State<DashbordMqttWater> {
       ),
       DataColumn(
         label: Text(
-          "Ma'lumot vaqti:",
+          LocaleKeys.dashboard_mqtt_text_8.tr(),
           style: GoogleFonts.roboto(
             fontSize: 18,
             fontWeight: FontWeight.bold,

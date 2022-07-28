@@ -71,5 +71,15 @@ abstract class  LocaleKeys {
   static const info_alert_text_5 = 'info_alert_text_5';
   static const info_alert_text_6 = 'info_alert_text_6';
   static const more_btn_text = 'more_btn_text';
+  static const send_message_text = 'send_message_text';
+  static const nodate_text = 'nodate_text';
+  static const dashboard_mqtt_text_1 = 'dashboard_mqtt_text_1';
+  static const dashboard_mqtt_text_2 = 'dashboard_mqtt_text_2';
+  static const dashboard_mqtt_text_3 = 'dashboard_mqtt_text_3';
+  static const dashboard_mqtt_text_4 = 'dashboard_mqtt_text_4';
+  static const dashboard_mqtt_text_5 = 'dashboard_mqtt_text_5';
+  static const dashboard_mqtt_text_6 = 'dashboard_mqtt_text_6';
+  static const dashboard_mqtt_text_7 = 'dashboard_mqtt_text_7';
+  static const dashboard_mqtt_text_8 = 'dashboard_mqtt_text_8';
 
 }

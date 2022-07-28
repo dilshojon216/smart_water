@@ -32,8 +32,8 @@ class CodegenLoader extends AssetLoader{
   "year_chart_water_text_1": "Qurilma qiymati",
   "yil_title": "yil",
   "vaqt_data_text_1": "Vaqti:",
-  "suv_sathi_data_text_2": "Suv Sathi: \\n(m)",
-  "suv_sarfi_data_text": "Suv Sarifi: \\n(m3/s)",
+  "suv_sathi_data_text_2": "Suv Sathi: (m)",
+  "suv_sarfi_data_text": "Suv Sarifi: (m3/s)",
   "mqtt_all_water_text_1": "Suv sathi:",
   "mqtt_all_water_text_2": "Suv sarfi:",
   "mqtt_all_water_text_3": "Vaqti:",
@@ -84,7 +84,17 @@ class CodegenLoader extends AssetLoader{
   "info_alert_text_4": "Bir oy oraliqda ishlagan qurilmalar soni:",
   "info_alert_text_5": "Uzoq muddat oldin ishlagan qurilmalar soni:",
   "info_alert_text_6": "Umuman ishlamagn qurilmalar soni:",
-  "more_btn_text": "Batafsil ma'lumot"
+  "more_btn_text": "Batafsil ma'lumot",
+  "send_message_text": "Xabar jo'natish",
+  "nodate_text": "Ma'lumot yo'q",
+  "dashboard_mqtt_text_1": "Bugun ishlagan",
+  "dashboard_mqtt_text_2": "Bir hafta oraliqda ishlagan",
+  "dashboard_mqtt_text_3": "Bir oy oraliqda ishlagan ",
+  "dashboard_mqtt_text_4": "Uzoq muddat oldin ishlagan ",
+  "dashboard_mqtt_text_5": "Umuman ishlamagan",
+  "dashboard_mqtt_text_6": "Qurilmalarning umumiy xolati",
+  "dashboard_mqtt_text_7": "Nomi:",
+  "dashboard_mqtt_text_8": "Ma'lumot vaqti:"
 };
 static const Map<String,dynamic> ru = {
   "water_main_title": "Посты контроля воды",
@@ -104,8 +114,8 @@ static const Map<String,dynamic> ru = {
   "year_chart_water_text_1": "Стоимость устройства",
   "yil_title": "год",
   "vaqt_data_text_1": "Время:",
-  "suv_sathi_data_text_2": "Уровень воды: \\n(м)",
-  "suv_sarfi_data_text": "Расход воды: \\n(м3/с)",
+  "suv_sathi_data_text_2": "Уровень воды:(м)",
+  "suv_sarfi_data_text": "Расход воды: (м3/с)",
   "mqtt_all_water_text_1": "Уровень воды:",
   "mqtt_all_water_text_2": "Потребление воды:",
   "mqtt_all_water_text_3": "Время:",
@@ -156,7 +166,17 @@ static const Map<String,dynamic> ru = {
   "info_alert_text_4": "Количество устройств, которые работали в течение месяца:",
   "info_alert_text_5": "Количество устройств, которые работали давно:",
   "info_alert_text_6": "Общее количество работающих устройств:",
-  "more_btn_text": "учить больше"
+  "more_btn_text": "учить больше",
+  "send_message_text": "Послать сообщение",
+  "nodate_text": "Нет информации",
+  "dashboard_mqtt_text_1": "Работал сегодня",
+  "dashboard_mqtt_text_2": "Работали с интервалом в одну неделю",
+  "dashboard_mqtt_text_3": "Работали с интервалом в один месяц",
+  "dashboard_mqtt_text_4": "Давно работал ",
+  "dashboard_mqtt_text_5": "Это вообще не сработало",
+  "dashboard_mqtt_text_6": "Общее состояние устройств",
+  "dashboard_mqtt_text_7": "Имя:",
+  "dashboard_mqtt_text_8": "Время информации:"
 };
 static const Map<String,dynamic> uz = {
   "water_main_title": "Сув назорат постлари",
@@ -176,8 +196,8 @@ static const Map<String,dynamic> uz = {
   "year_chart_water_text_1": "Қурилма қиймати",
   "yil_title": "йил",
   "vaqt_data_text_1": "Вақти:",
-  "suv_sathi_data_text_2": "Сув Сатҳи: \\н(м)",
-  "suv_sarfi_data_text": "Сув Сарифи: \\н(м3/с)",
+  "suv_sathi_data_text_2": "Сув Сатҳи: (м)",
+  "suv_sarfi_data_text": "Сув Сарифи: (м3/с)",
   "mqtt_all_water_text_1": "Сув сатҳи:",
   "mqtt_all_water_text_2": "Сув сарфи:",
   "mqtt_all_water_text_3": "Вақти:",
@@ -228,7 +248,17 @@ static const Map<String,dynamic> uz = {
   "info_alert_text_4": "Бир ой оралиқда ишлаган қурилмалар сони:",
   "info_alert_text_5": "Узоқ муддат олдин ишлаган қурилмалар сони:",
   "info_alert_text_6": "Умуман ишламагн қурилмалар сони:",
-  "more_btn_text": "Батафсил маълумот"
+  "more_btn_text": "Батафсил маълумот",
+  "send_message_text": "Хабар жўнатиш",
+  "nodate_text": "Маълумот йўқ",
+  "dashboard_mqtt_text_1": "Бугун ишлаган",
+  "dashboard_mqtt_text_2": "Бир ҳафта оралиқда ишлаган",
+  "dashboard_mqtt_text_3": "Бир ой оралиқда ишлаган",
+  "dashboard_mqtt_text_4": "Узоқ муддат олдин ишлаган ",
+  "dashboard_mqtt_text_5": "Умуман ишламаган",
+  "dashboard_mqtt_text_6": "Қурилмаларнинг умумий холати",
+  "dashboard_mqtt_text_7": "Номи:",
+  "dashboard_mqtt_text_8": "Маълумот вақти:"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ru": ru, "uz": uz};
 }

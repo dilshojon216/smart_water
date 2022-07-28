@@ -16,8 +16,8 @@
   "year_chart_water_text_1": "Қурилма қиймати",
   "yil_title": "йил",
   "vaqt_data_text_1": "Вақти:",
-  "suv_sathi_data_text_2": "Сув Сатҳи: \\н(м)",
-  "suv_sarfi_data_text": "Сув Сарифи: \\н(м3/с)",
+  "suv_sathi_data_text_2": "Сув Сатҳи: (м)",
+  "suv_sarfi_data_text": "Сув Сарифи: (м3/с)",
   "mqtt_all_water_text_1": "Сув сатҳи:",
   "mqtt_all_water_text_2": "Сув сарфи:",
   "mqtt_all_water_text_3": "Вақти:",
@@ -68,5 +68,15 @@
   "info_alert_text_4": "Бир ой оралиқда ишлаган қурилмалар сони:",
   "info_alert_text_5": "Узоқ муддат олдин ишлаган қурилмалар сони:",
   "info_alert_text_6": "Умуман ишламагн қурилмалар сони:",
-  "more_btn_text": "Батафсил маълумот"
+  "more_btn_text": "Батафсил маълумот",
+  "send_message_text": "Хабар жўнатиш",
+  "nodate_text": "Маълумот йўқ",
+  "dashboard_mqtt_text_1": "Бугун ишлаган",
+  "dashboard_mqtt_text_2": "Бир ҳафта оралиқда ишлаган",
+  "dashboard_mqtt_text_3": "Бир ой оралиқда ишлаган",
+  "dashboard_mqtt_text_4": "Узоқ муддат олдин ишлаган ",
+  "dashboard_mqtt_text_5": "Умуман ишламаган",
+  "dashboard_mqtt_text_6": "Қурилмаларнинг умумий холати",
+  "dashboard_mqtt_text_7": "Номи:",
+  "dashboard_mqtt_text_8": "Маълумот вақти:"
 }

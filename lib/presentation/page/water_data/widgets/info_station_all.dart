@@ -113,7 +113,7 @@ class _InfoStationAllState extends State<InfoStationAll> {
                     'assets/images/water_level.png'),
                 cardSecondWidget(
                     context,
-                    LocaleKeys.suv_sarfi_data_text.tr(),
+                    LocaleKeys.suv_sarfi_data_text.tr().replaceAll("\n", ""),
                     widget.info.data != null
                         ? widget.info.data!.volume!.toStringAsFixed(3)
                         : "",

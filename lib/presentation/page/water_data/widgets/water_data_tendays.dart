@@ -135,7 +135,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
             label: Text(
               LocaleKeys.ten_days_text.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -145,7 +145,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
             label: Text(
               LocaleKeys.suv_sathi_data_text_2.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -155,7 +155,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
             label: Text(
               LocaleKeys.suv_sarfi_data_text.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -180,7 +180,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   userInfo.time,
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.roboto(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
@@ -192,7 +192,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
         ),
         DataCell(Text(
           userInfo.level.toStringAsFixed(3),
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.roboto(
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
@@ -200,7 +200,7 @@ class _WaterDataTendaysState extends State<WaterDataTendays> {
         DataCell(
           Text(
             userInfo.volume!.toStringAsFixed(3),
-            style: GoogleFonts.poppins(
+            style: GoogleFonts.roboto(
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),

@@ -87,7 +87,7 @@ class _WaterDataYearState extends State<WaterDataYear> {
             label: Text(
               LocaleKeys.yillar_text.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -97,7 +97,7 @@ class _WaterDataYearState extends State<WaterDataYear> {
             label: Text(
               LocaleKeys.suv_sathi_data_text_2.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -107,7 +107,7 @@ class _WaterDataYearState extends State<WaterDataYear> {
             label: Text(
               LocaleKeys.suv_sarfi_data_text.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),

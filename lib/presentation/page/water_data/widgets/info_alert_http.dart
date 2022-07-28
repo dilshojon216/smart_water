@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:smart_water/data/model/water_info.dart';
 
+import '../../../../translations/locale_keys.g.dart';
 import 'dashbord_http_water.dart';
 
 class InfoAlertHttp extends StatefulWidget {
@@ -66,7 +68,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Jami qurilmlar soni:",
+                    LocaleKeys.info_alert_text_1.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 20,
@@ -95,7 +97,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bugun ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_2.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -124,7 +126,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bir hafta oraliqda ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_3.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -153,7 +155,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bir oy oraliqda ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_4.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -182,7 +184,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Uzoq muddat oldin ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_5.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -211,7 +213,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Umuman ishlamagn qurilmalar soni:",
+                    LocaleKeys.info_alert_text_6.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -251,7 +253,7 @@ class _InfoAlertHttpState extends State<InfoAlertHttp> {
                               )));
                 },
                 child: Text(
-                  "Batafsil ma'lumot",
+                  LocaleKeys.more_btn_text.tr(),
                   style: GoogleFonts.roboto(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,6 +20,7 @@ import '../../../../core/other/status_bar.dart';
 import '../../../../data/db/database/smart_water_database.dart';
 import '../../../../data/model/organization.dart';
 import '../../../../data/model/region.dart';
+import '../../../../translations/locale_keys.g.dart';
 import '../../device_dashboard_water/widgets/card_second_widget.dart';
 import '../../device_dashboard_water/widgets/card_wigdet.dart';
 import '../../device_dashboard_water/widgets/data_value_widget.dart';
@@ -150,7 +152,7 @@ class _DataMqttAllState extends State<DataMqttAll> {
               child: CircularProgressIndicator(),
             )
           : mqttData == null && mqttInfo == null
-              ? noDataErrorWidget("Ma'lumot yo'q")
+              ? noDataErrorWidget(LocaleKeys.no_data_text.tr())
               : SingleChildScrollView(
                   child: Column(
                     children: [
@@ -196,27 +198,31 @@ class _DataMqttAllState extends State<DataMqttAll> {
                           children: [
                             cardSecondWidget(
                                 context,
-                                "Suv Sathi (sm):",
+                                LocaleKeys.suv_sathi_data_text_2
+                                    .tr()
+                                    .replaceAll("\n", ""),
                                 mqttData != null ? getSath() : "",
                                 'assets/images/water_level.png'),
                             cardSecondWidget(
                                 context,
-                                "Suv Sarfi (m3/s):",
+                                LocaleKeys.suv_sarfi_data_text
+                                    .tr()
+                                    .replaceAll("\n", ""),
                                 mqttData != null ? getSarif() : "",
                                 'assets/images/speed_water.png'),
                             //Typicons.water
                           ],
                         ),
                       ),
-                      dataValueWidget(context, "Viloyat nomi:",
+                      dataValueWidget(context, LocaleKeys.viloyat_titel.tr(),
                           mqttInfo != null ? getRegion() : "", 5, 5),
-                      dataValueWidget(context, "Tashkilot nomi:",
+                      dataValueWidget(context, LocaleKeys.tuman_title.tr(),
                           mqttInfo != null ? getDistrict() : "", 5, 5),
-                      dataValueWidget(context, "Kanalning nomi:",
+                      dataValueWidget(context, LocaleKeys.kanal_nomi.tr(),
                           mqttInfo != null ? getName() : "", 5, 5),
-                      dataValueWidget(context, "Qurilmaning ID si:",
+                      dataValueWidget(context, LocaleKeys.id_text.tr(),
                           mqttInfo != null ? getID() : "", 5, 5),
-                      dataValueWidget(context, "Koordinata tuzatishi:",
+                      dataValueWidget(context, LocaleKeys.paprvaka_title.tr(),
                           mqttInfo != null ? getPapravaka() : "", 5, 5),
                       GestureDetector(
                         onTap: () {
@@ -225,7 +231,7 @@ class _DataMqttAllState extends State<DataMqttAll> {
                         child: dataValueWidget(context, "Location:",
                             mqttInfo != null ? getLocation() : "", 5, 7),
                       ),
-                      dataValueWidget(context, "Qurilmaning vaqti:",
+                      dataValueWidget(context, LocaleKeys.last_data_text.tr(),
                           mqttInfo != null ? getTime() : "", 5, 5),
                     ],
                   ),

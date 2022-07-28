@@ -184,7 +184,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
             label: Text(
               LocaleKeys.vaqt_data_text_1.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -194,7 +194,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
             label: Text(
               LocaleKeys.suv_sathi_data_text_2.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -204,7 +204,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
             label: Text(
               LocaleKeys.suv_sarfi_data_text.tr(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
@@ -229,7 +229,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   userInfo.time,
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.roboto(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
@@ -241,7 +241,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
         ),
         DataCell(Text(
           userInfo.level!.toStringAsFixed(3),
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.roboto(
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
@@ -249,7 +249,7 @@ class _WaterSeletionDateState extends State<WaterSeletionDate> {
         DataCell(
           Text(
             userInfo.volume!.toStringAsFixed(3),
-            style: GoogleFonts.poppins(
+            style: GoogleFonts.roboto(
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
