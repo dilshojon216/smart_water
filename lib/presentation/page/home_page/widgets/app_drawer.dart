@@ -27,6 +27,7 @@ class _AppDrawerState extends State<AppDrawer> {
   String? typeWaterData = "1";
   String typePumpData = "2";
   bool wellInstall = false;
+  bool pumperInstall = false;
 
   @override
   void initState() {
@@ -39,6 +40,7 @@ class _AppDrawerState extends State<AppDrawer> {
 
     waterInstall = _prefs.getString("waterInstall").toString() == "true";
     wellInstall = _prefs.getString("wellInstall").toString() == "true";
+    pumperInstall = _prefs.getString("pumperInstall").toString() == "true";
     typeWaterData = _prefs.getInt("valueWater").toString();
     if (typeWaterData == null) {
       typeWaterData = "1";
@@ -131,7 +133,8 @@ class _AppDrawerState extends State<AppDrawer> {
           ),
           ListTile(
             onTap: () {
-              // Navigator.of(context).pushNamed(AppRoutesNames.pumpMainData);
+              Navigator.of(context).pushNamed(AppRoutesNames.wellMainData,
+                  arguments: pumperInstall);
             },
             leading:
                 const Icon(Icons.location_on, color: Colors.white, size: 35),

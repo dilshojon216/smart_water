@@ -327,6 +327,7 @@ class _WaterDataMainState extends State<WaterDataMain> {
 
     _prefs.setString("waterInstall", "");
     _prefs.setString("stations", "");
+    context.read<WaterHttpModel>().changeWaterInfo([]);
     setState(() {
       widget.isLogin = false;
     });

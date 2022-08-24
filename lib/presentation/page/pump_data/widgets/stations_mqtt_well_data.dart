@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/other/status_bar.dart';
@@ -134,12 +136,12 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
                 children: [
                   cardSecondWidget(
                       context,
-                      "Suv Sathi (sm):",
+                      LocaleKeys.more_mqtt_text_4.tr(),
                       widget.mqttModel.data != null ? getSath() : "",
                       'assets/images/water_level.png'),
                   cardSecondWidget(
                       context,
-                      "Temperatura (°C):",
+                      LocaleKeys.well_data_text_2.tr(),
                       widget.mqttModel.data != null ? getTemp2() : "",
                       'assets/images/thermometer.png'),
                   //Typicons.water
@@ -157,7 +159,7 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
                   ),
                   cardSecondWidget(
                       context,
-                      "Sho'rlanganlik (g/L):",
+                      LocaleKeys.well_data_text_3.tr(),
                       widget.mqttModel.data != null ? getShorlanish() : "",
                       'assets/images/speed_water.png',
                       asad: 4),
@@ -169,13 +171,13 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
                 ],
               ),
             ),
-            dataValueWidget(context, "Viloyat nomi:",
+            dataValueWidget(context, LocaleKeys.viloyat_titel.tr(),
                 widget.mqttModel.info != null ? getRegion() : "", 5, 5),
-            dataValueWidget(context, "Tashkilot nomi:",
+            dataValueWidget(context, LocaleKeys.tuman_title.tr(),
                 widget.mqttModel.info != null ? getDistrict() : "", 5, 5),
-            dataValueWidget(context, "Kanalning nomi:",
+            dataValueWidget(context, LocaleKeys.kanal_nomi.tr(),
                 widget.mqttModel.info != null ? getName() : "", 5, 5),
-            dataValueWidget(context, "Qurilmaning ID si:",
+            dataValueWidget(context, LocaleKeys.id_text.tr(),
                 widget.mqttModel.info != null ? getID() : "", 5, 5),
             GestureDetector(
               onTap: () {
@@ -184,7 +186,7 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
               child: dataValueWidget(context, "Location:",
                   widget.mqttModel.info != null ? getLocation() : "", 5, 7),
             ),
-            dataValueWidget(context, "Info kelgan vaqti:",
+            dataValueWidget(context, LocaleKeys.info_vaqt.tr(),
                 widget.mqttModel.info != null ? getTime() : "", 5, 5),
           ],
         ),
@@ -486,7 +488,7 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
           return "${((kF - 27) / 350.0).toStringAsFixed(3)} g/L";
         }
       } else {
-        return "${((kF - 40) / 380.0).toStringAsFixed(3)} g/L";
+        return "${((kF - 40) / 380.0).toStringAsFixed(3)} g/l";
       }
     } catch (e) {
       print(e);

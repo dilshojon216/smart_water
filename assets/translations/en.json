@@ -68,7 +68,7 @@
   "info_alert_text_4": "Bir oy oraliqda ishlagan qurilmalar soni:",
   "info_alert_text_5": "Uzoq muddat oldin ishlagan qurilmalar soni:",
   "info_alert_text_6": "Umuman ishlamagn qurilmalar soni:",
-  "more_btn_text": "Batafsil ma'lumot",
+  "more_btn_text": "Batafsil ",
   "send_message_text": "Xabar jo'natish",
   "nodate_text": "Ma'lumot yo'q",
   "dashboard_mqtt_text_1": "Bugun ishlagan",
@@ -78,5 +78,13 @@
   "dashboard_mqtt_text_5": "Umuman ishlamagan",
   "dashboard_mqtt_text_6": "Qurilmalarning umumiy xolati",
   "dashboard_mqtt_text_7": "Nomi:",
-  "dashboard_mqtt_text_8": "Ma'lumot vaqti:"
+  "dashboard_mqtt_text_8": "Ma'lumot vaqti:",
+  "well_data_text_1": "Smart Well ma'lumotlari hali ulanmagan",
+  "well_data_text_2": "Temperatura (°C):",
+  "well_data_text_3": "Sho'rlanganlik (g/l):",
+  "well_data_text_4": "Sho'rlanish:",
+  "temp_title_text": "Temperatura:",
+  "pump_text_1": "Nasos stansiyalar ma'lumotlari hali ulanmagan",
+  "pump_text_2": "Jami suv sarfi:",
+  "pump_text_3": "Musbat suv sarfi:"
 }

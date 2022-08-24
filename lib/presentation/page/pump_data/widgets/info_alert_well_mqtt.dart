@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import 'dashboard_mqtt_well.dart';
 import 'last_mqtt_data_well.dart';
@@ -86,7 +88,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Jami qurilmlar soni:",
+                    LocaleKeys.info_alert_text_1.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 20,
@@ -115,7 +117,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bugun ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_2.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -144,7 +146,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bir hafta oraliqda ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_3.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -173,7 +175,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Bir oy oraliqda ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_4.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -202,7 +204,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Uzoq muddat oldin ishlagan qurilmalar soni:",
+                    LocaleKeys.info_alert_text_5.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -231,7 +233,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Umuman ishlamagn qurilmalar soni:",
+                    LocaleKeys.info_alert_text_6.tr(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                         fontSize: 16,
@@ -271,7 +273,7 @@ class _InfoAlertWellMqttState extends State<InfoAlertWellMqtt> {
                               )));
                 },
                 child: Text(
-                  "Batafsil ma'lumot",
+                  LocaleKeys.more_btn_text.tr(),
                   style: GoogleFonts.roboto(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

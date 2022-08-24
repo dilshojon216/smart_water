@@ -68,7 +68,7 @@
   "info_alert_text_4": "Бир ой оралиқда ишлаган қурилмалар сони:",
   "info_alert_text_5": "Узоқ муддат олдин ишлаган қурилмалар сони:",
   "info_alert_text_6": "Умуман ишламагн қурилмалар сони:",
-  "more_btn_text": "Батафсил маълумот",
+  "more_btn_text": "Батафсил ",
   "send_message_text": "Хабар жўнатиш",
   "nodate_text": "Маълумот йўқ",
   "dashboard_mqtt_text_1": "Бугун ишлаган",
@@ -78,5 +78,13 @@
   "dashboard_mqtt_text_5": "Умуман ишламаган",
   "dashboard_mqtt_text_6": "Қурилмаларнинг умумий холати",
   "dashboard_mqtt_text_7": "Номи:",
-  "dashboard_mqtt_text_8": "Маълумот вақти:"
+  "dashboard_mqtt_text_8": "Маълумот вақти:",
+  "well_data_text_1": "Смарт Велл маълумотлари ҳали уланмаган",
+  "well_data_text_2": "Температура (°С):",
+  "well_data_text_3": "Шўрланганлик (г/л):",
+  "well_data_text_4": "Шўрланиш:",
+  "temp_title_text": "Температура:",
+  "pump_text_1": "Насос станциялар маълумотлари ҳали уланмаган",
+  "pump_text_2": "Жами сув сарфи:",
+  "pump_text_3": "Мусбат сув сарфи:"
 }

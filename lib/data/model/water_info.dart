@@ -1,10 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:floor/floor.dart';
 
+import 'type_converter.dart';
 import 'water_stations_data.dart';
 
 @entity
 class WaterInfo extends Equatable {
+  @PrimaryKey(autoGenerate: true)
   late int? id;
   late String? name;
   late int? region;
@@ -14,6 +16,7 @@ class WaterInfo extends Equatable {
   late String? lon;
   late String? simkart;
   late String? code;
+  @TypeConverters([WaterStationsDataConvert])
   late WaterStationsData? data;
   WaterInfo.fromJson(Map<String, dynamic> json) {
     id = json['id'] == null ? -999 : int.parse(json['id'].toString());

@@ -67,6 +67,8 @@ class _$SmartWaterDatabase extends SmartWaterDatabase {
 
   RegionDao? _regionDaoInstance;
 
+  PumpStationsDao? _pumpStationsDaoInstance;
+
   Future<sqflite.Database> open(String path, List<Migration> migrations,
       [Callback? callback]) async {
     final databaseOptions = sqflite.OpenDatabaseOptions(
@@ -91,6 +93,8 @@ class _$SmartWaterDatabase extends SmartWaterDatabase {
             'CREATE TABLE IF NOT EXISTS `District` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `regionId` INTEGER NOT NULL, `name` TEXT NOT NULL)');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `Region` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
+        await database.execute(
+            'CREATE TABLE IF NOT EXISTS `pump_stations` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `regionId` INTEGER NOT NULL, `discretId` INTEGER NOT NULL, `balanceId` INTEGER NOT NULL, `topic` TEXT NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -111,6 +115,12 @@ class _$SmartWaterDatabase extends SmartWaterDatabase {
   @override
   RegionDao get regionDao {
     return _regionDaoInstance ??= _$RegionDao(database, changeListener);
+  }
+
+  @override
+  PumpStationsDao get pumpStationsDao {
+    return _pumpStationsDaoInstance ??=
+        _$PumpStationsDao(database, changeListener);
   }
 }
 
@@ -277,3 +287,85 @@ class _$RegionDao extends RegionDao {
         demise, OnConflictStrategy.abort);
   }
 }
+
+class _$PumpStationsDao extends PumpStationsDao {
+  _$PumpStationsDao(this.database, this.changeListener)
+      : _queryAdapter = QueryAdapter(database),
+        _pumpStationsInsertionAdapter = InsertionAdapter(
+            database,
+            'pump_stations',
+            (PumpStations item) => <String, Object?>{
+                  'id': item.id,
+                  'name': item.name,
+                  'latitude': item.latitude,
+                  'longitude': item.longitude,
+                  'regionId': item.regionId,
+                  'discretId': item.discretId,
+                  'balanceId': item.balanceId,
+                  'topic': item.topic
+                }),
+        _pumpStationsUpdateAdapter = UpdateAdapter(
+            database,
+            'pump_stations',
+            ['id'],
+            (PumpStations item) => <String, Object?>{
+                  'id': item.id,
+                  'name': item.name,
+                  'latitude': item.latitude,
+                  'longitude': item.longitude,
+                  'regionId': item.regionId,
+                  'discretId': item.discretId,
+                  'balanceId': item.balanceId,
+                  'topic': item.topic
+                });
+
+  final sqflite.DatabaseExecutor database;
+
+  final StreamController<String> changeListener;
+
+  final QueryAdapter _queryAdapter;
+
+  final InsertionAdapter<PumpStations> _pumpStationsInsertionAdapter;
+
+  final UpdateAdapter<PumpStations> _pumpStationsUpdateAdapter;
+
+  @override
+  Future<List<PumpStations>> getAll() async {
+    return _queryAdapter.queryList('SELECT * FROM pump_stations',
+        mapper: (Map<String, Object?> row) => PumpStations(
+            id: row['id'] as int?,
+            name: row['name'] as String,
+            latitude: row['latitude'] as double,
+            longitude: row['longitude'] as double,
+            regionId: row['regionId'] as int,
+            discretId: row['discretId'] as int,
+            balanceId: row['balanceId'] as int,
+            topic: row['topic'] as String));
+  }
+
+  @override
+  Future<void> deleteAll() async {
+    await _queryAdapter.queryNoReturn('DELETE FROM pump_stations');
+  }
+
+  @override
+  Future<int> insert(PumpStations pumpStation) {
+    return _pumpStationsInsertionAdapter.insertAndReturnId(
+        pumpStation, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> insertAll(List<PumpStations> pumpStations) async {
+    await _pumpStationsInsertionAdapter.insertList(
+        pumpStations, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<int> update(PumpStations pumpStation) {
+    return _pumpStationsUpdateAdapter.updateAndReturnChangedRows(
+        pumpStation, OnConflictStrategy.abort);
+  }
+}
+
+// ignore_for_file: unused_element
+final _waterStationsDataConvert = WaterStationsDataConvert();

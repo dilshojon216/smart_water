@@ -1,10 +1,12 @@
 import 'dart:convert';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import '../../../../data/model/mqtt_user_token.dart';
 import '../../../../data/model/water_user_token.dart';
@@ -77,7 +79,7 @@ class _LoginAlertState extends State<LoginAlert> {
                     Icons.account_circle,
                     color: Theme.of(context).primaryColor,
                   ),
-                  labelText: 'Login',
+                  labelText: LocaleKeys.login_alert_1.tr(),
                   iconColor: Theme.of(context).primaryColor,
                 ),
               ),
@@ -93,7 +95,7 @@ class _LoginAlertState extends State<LoginAlert> {
                     Icons.lock,
                     color: Theme.of(context).primaryColor,
                   ),
-                  labelText: 'Parol',
+                  labelText: LocaleKeys.login_alert_2.tr(),
                   iconColor: Theme.of(context).primaryColor,
                 ),
               ),
@@ -125,12 +127,12 @@ class _LoginAlertState extends State<LoginAlert> {
                           signIn();
                         } else {
                           setState(() {
-                            errorMessage = "Login va parolni kiriting";
+                            errorMessage = LocaleKeys.login_alert_3.tr();
                           });
                         }
                       },
                       child: Text(
-                        "Kirish",
+                        LocaleKeys.login_alert_4.tr(),
                         style: GoogleFonts.roboto(
                             color: Colors.white, fontSize: 18),
                       ),
@@ -152,7 +154,7 @@ class _LoginAlertState extends State<LoginAlert> {
           .signIn(_loginController.value.text, _passwordController.value.text);
     } else {
       setState(() {
-        errorMessage = "Internet bilan bog'lanishda xatolik yuz berdi";
+        errorMessage = LocaleKeys.login_alert_5.tr();
       });
     }
   }

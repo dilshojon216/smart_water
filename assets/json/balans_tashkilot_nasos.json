@@ -1,0 +1,107 @@
+[
+  {
+    "id": 5,
+    "region_id": 1,
+    "name": "Qoraqalpog‘iston NSEB"
+  },
+  {
+    "id": 6,
+    "region_id": 1,
+    "name": "Beruniy NSEB"
+  },
+  {
+    "id": 7,
+    "region_id": 2,
+    "name": "Norin-Qoradaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 8,
+    "region_id": 3,
+    "name": "Amu-Buxoro ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 9,
+    "region_id": 3,
+    "name": "Amu-Buxoro mashina kanalini ishlatish boshqarmasi"
+  },
+  {
+    "id": 10,
+    "region_id": 4,
+    "name": "Sirdaryo-Zarafshon ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 11,
+    "region_id": 4,
+    "name": "Jizzax bosh nasos stansiyasi boshqarmasi"
+  },
+  {
+    "id": 12,
+    "region_id": 5,
+    "name": "Amu-Qashqadaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 13,
+    "region_id": 5,
+    "name": "Qarshi magistral kanalidan foydalanish boshqarmasi"
+  },
+  {
+    "id": 14,
+    "region_id": 6,
+    "name": "Quyi Zarafshon ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 15,
+    "region_id": 7,
+    "name": "Norin-Sirdaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 16,
+    "region_id": 8,
+    "name": "Zarafshon ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 17,
+    "region_id": 9,
+    "name": "Quyi-Sirdaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 18,
+    "region_id": 9,
+    "name": "Jizzax bosh nasos stansiyasi boshqarmasi"
+  },
+  {
+    "id": 19,
+    "region_id": 10,
+    "name": "Amu-Surxon ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 20,
+    "region_id": 11,
+    "name": "Chirchiq-Ohangaron ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 21,
+    "region_id": 12,
+    "name": "Sirdaryo-So‘x ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 22,
+    "region_id": 13,
+    "name": "Chapqirg‘oq Amudaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 24,
+    "region_id": 6,
+    "name": "Amu-Buxoro mashina kanalidan foydalanish boshqarmasi"
+  },
+  {
+    "id": 25,
+    "region_id": 7,
+    "name": "Norin-Qoradaryo ITHB huzuridagi NSEB"
+  },
+  {
+    "id": 26,
+    "region_id": 12,
+    "name": "Fargona NSEB"
+  }
+]

@@ -482,7 +482,6 @@ class _WaterMqttAllState extends State<WaterMqttAll> {
       print(
           'EXAMPLE::ERROR Mosquitto client connection failed - disconnecting, status is ${client.connectionStatus}');
       client.disconnect();
-      exit(-1);
     }
   }
 
@@ -499,7 +498,6 @@ class _WaterMqttAllState extends State<WaterMqttAll> {
     } else {
       print(
           'EXAMPLE::OnDisconnected callback is unsolicited or none, this is incorrect - exiting');
-      exit(-1);
     }
     if (pongCount == 3) {
       print('EXAMPLE:: Pong count is correct');

@@ -68,7 +68,7 @@
   "info_alert_text_4": "Количество устройств, которые работали в течение месяца:",
   "info_alert_text_5": "Количество устройств, которые работали давно:",
   "info_alert_text_6": "Общее количество работающих устройств:",
-  "more_btn_text": "учить больше",
+  "more_btn_text": "Более",
   "send_message_text": "Послать сообщение",
   "nodate_text": "Нет информации",
   "dashboard_mqtt_text_1": "Работал сегодня",
@@ -78,5 +78,13 @@
   "dashboard_mqtt_text_5": "Это вообще не сработало",
   "dashboard_mqtt_text_6": "Общее состояние устройств",
   "dashboard_mqtt_text_7": "Имя:",
-  "dashboard_mqtt_text_8": "Время информации:"
+  "dashboard_mqtt_text_8": "Время информации:",
+  "well_data_text_1": "Данные Smart Well еще не подключены",
+  "well_data_text_2": "Температура (°С):",
+  "well_data_text_3": "Соленость (г/л):",
+  "well_data_text_4": "Соленость:",
+  "temp_title_text": "Температура:",
+  "pump_text_1": "Данные насосных станций еще не подключены",
+  "pump_text_2": "Общий расход воды:",
+  "pump_text_3": "Положительный расход воды:"
 }

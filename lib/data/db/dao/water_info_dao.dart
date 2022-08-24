@@ -11,12 +11,9 @@ abstract class WaterInfoDao {
   @Update()
   Future<int> update(WaterInfo demise);
 
-  @Query('SELECT * FROM water_info WHERE id = :id')
-  Future<WaterInfo?> findById(int id);
-
   @Query('DELETE FROM water_info')
-  Future<int> deleteAll(WaterInfo demise);
+  Future<void> deleteAll();
 
   @Query('DELETE FROM water_info WHERE id = :id')
-  Future<int> deleteById(int id);
+  Future<void> deleteById(int id);
 }

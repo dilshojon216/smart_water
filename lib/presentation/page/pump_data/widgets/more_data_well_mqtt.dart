@@ -1,9 +1,11 @@
 import 'dart:convert';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import '../../../../core/other/status_bar.dart';
 import '../../../../data/db/database/smart_water_database.dart';
@@ -26,17 +28,17 @@ class MoreDataWellMqtt extends StatefulWidget {
 
 class _MoreDataWellMqttState extends State<MoreDataWellMqtt> {
   List<String> headerText = [
-    "Nomi:",
-    "Viloyat:",
-    "Balans tashkilot:",
-    "Suv sathi (sm):",
-    "Shorlanish (g/l):",
-    "Temperatura (°C):",
-    "Signal (%):",
-    "Quvvati (%):",
-    "Temperatura (°C):",
+    LocaleKeys.dashboard_mqtt_text_7.tr(),
+    LocaleKeys.more_mqtt_text_2.tr(),
+    LocaleKeys.more_mqtt_text_3.tr(),
+    LocaleKeys.more_mqtt_text_4.tr(),
+    LocaleKeys.well_data_text_3.tr(),
+    LocaleKeys.well_data_text_2.tr(),
+    LocaleKeys.more_mqtt_text_7.tr(),
+    LocaleKeys.more_mqtt_text_8.tr(),
+    LocaleKeys.more_mqtt_text_9.tr(),
     "IMEI:",
-    "Vaqti:"
+    LocaleKeys.vaqt_data_text_1.tr()
   ];
   @override
   void initState() {

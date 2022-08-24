@@ -67,7 +67,6 @@ class CustomSearchDelegate extends SearchDelegate {
     List<WaterInfo> matchQuery = [];
 
     for (var fruit in aas!) {
-      print(fruit.name);
       if (fruit.name!.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(fruit);
       }

@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../pump_viewmodel.dart';
+import 'dashborad_mqtt_pump.dart';
+import 'data_search.dart';
+import 'info_alert_pump_mqtt.dart';
+import 'last_data_pump.dart';
 
 class AppBarWell extends StatefulWidget implements PreferredSizeWidget {
   final String title;
-  const AppBarWell({Key? key, required this.title}) : super(key: key);
+  GlobalKey<ScaffoldState> key1;
+  AppBarWell({
+    Key? key,
+    required this.title,
+    required this.key1,
+  }) : super(key: key);
 
   @override
   State<AppBarWell> createState() => _AppBarWellState();
@@ -19,7 +29,6 @@ class _AppBarWellState extends State<AppBarWell> {
   Widget build(BuildContext context) {
     return AppBar(
       systemOverlayStyle: SystemUiOverlayStyle(
-        // Status bar color
         statusBarColor: Theme.of(context).primaryColor,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.light,
@@ -35,22 +44,90 @@ class _AppBarWellState extends State<AppBarWell> {
       actions: [
         IconButton(
             onPressed: () {
-              print("sdsd");
+              int count = context.read<PumpViewModel>().subscribeCount;
+              List<PumpMqttData> list =
+                  context.read<PumpViewModel>().pumpMqttData;
+
+              if (count == list.length) {
+                showSearch(
+                    context: context, delegate: DataSearch(pumpMqttData: list));
+              } else {
+                show("Ma'lumotlar to'liq o'qib bo'linmadi");
+              }
             },
-            icon: SvgPicture.asset(
-              "assets/icons/search.svg",
+            icon: Icon(
+              Icons.search,
               color: Theme.of(context).primaryColor,
-              height: 25,
-              width: 25,
+              size: 25,
             )),
         IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              "assets/icons/filter.svg",
+            onPressed: () {
+              int count = context.read<PumpViewModel>().subscribeCount;
+              List<PumpMqttData> list =
+                  context.read<PumpViewModel>().pumpMqttData;
+              if (count == list.length) {
+                showInfo(list);
+              } else {
+                show("Ma'lumotlar to'liq o'qib bo'linmadi");
+              }
+            },
+            icon: Icon(
+              Icons.info_outlined,
               color: Theme.of(context).primaryColor,
-              height: 25,
-              width: 25,
+              size: 25,
             )),
+        PopupMenuButton(
+          onSelected: (value) {
+            switch (value) {
+              case '1':
+                int count = context.read<PumpViewModel>().subscribeCount;
+                List<PumpMqttData> list =
+                    context.read<PumpViewModel>().pumpMqttData;
+                if (count == list.length) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DashboradMqttPump(
+                        pumpMqttData: list,
+                      ),
+                    ),
+                  );
+                } else {
+                  show("Ma'lumotlar to'liq o'qib bo'linmadi");
+                }
+                break;
+              case '2':
+                clearData();
+                break;
+            }
+          },
+          itemBuilder: (context) => [
+            PopupMenuItem(
+              value: '1',
+              child: Text(
+                "Ma'lumotlar tahlilli",
+                style: GoogleFonts.roboto(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            PopupMenuItem(
+              value: '2',
+              child: Text(
+                'Chiqish',
+                style: GoogleFonts.roboto(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+          child: Icon(
+            Icons.more_vert,
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
       ],
       title: Center(
         child: Text(
@@ -64,5 +141,64 @@ class _AppBarWellState extends State<AppBarWell> {
       ),
       backgroundColor: Colors.white,
     );
+  }
+
+  Future show(
+    String message, {
+    Duration duration = const Duration(seconds: 3),
+  }) async {
+    await Future.delayed(const Duration(milliseconds: 100));
+    widget.key1.currentState!.showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.white,
+        content: Text(
+          message,
+          style: GoogleFonts.roboto(
+              fontSize: 16,
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.w500),
+        ),
+        duration: duration,
+      ),
+    );
+  }
+
+  void showInfo(List<PumpMqttData> post) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Ma'lumotlar",
+                    style: GoogleFonts.roboto(
+                        fontSize: 20.0,
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context, false);
+                      },
+                      icon: Icon(Icons.close,
+                          color: Theme.of(context).primaryColor)),
+                ],
+              ),
+              content: InfoAlertPumpMqtt(pumpMqttData: post),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  clearData() {
+    context.read<PumpViewModel>().setInstall(false);
+    context.read<PumpViewModel>().changePumpMqttData([], 0);
+    context.read<PumpViewModel>().clearPumpStation();
   }
 }

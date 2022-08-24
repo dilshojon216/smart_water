@@ -81,5 +81,13 @@ abstract class  LocaleKeys {
   static const dashboard_mqtt_text_6 = 'dashboard_mqtt_text_6';
   static const dashboard_mqtt_text_7 = 'dashboard_mqtt_text_7';
   static const dashboard_mqtt_text_8 = 'dashboard_mqtt_text_8';
+  static const well_data_text_1 = 'well_data_text_1';
+  static const well_data_text_2 = 'well_data_text_2';
+  static const well_data_text_3 = 'well_data_text_3';
+  static const well_data_text_4 = 'well_data_text_4';
+  static const temp_title_text = 'temp_title_text';
+  static const pump_text_1 = 'pump_text_1';
+  static const pump_text_2 = 'pump_text_2';
+  static const pump_text_3 = 'pump_text_3';
 
 }

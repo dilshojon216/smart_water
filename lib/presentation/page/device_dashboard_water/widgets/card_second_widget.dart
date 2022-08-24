@@ -2,7 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget cardSecondWidget(context, title, value, icon, {int asad = 1}) {
+Widget cardSecondWidget(context, title, value, icon,
+    {int asad = 1, bool iconVisibility = true}) {
   return Expanded(
     flex: asad,
     child: Card(
@@ -29,15 +30,18 @@ Widget cardSecondWidget(context, title, value, icon, {int asad = 1}) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: Image(
-                      image: AssetImage(
-                        icon,
+                  Visibility(
+                    visible: iconVisibility,
+                    child: Expanded(
+                      flex: 1,
+                      child: Image(
+                        image: AssetImage(
+                          icon,
+                        ),
+                        fit: BoxFit.contain,
+                        height: 45,
+                        width: 45,
                       ),
-                      fit: BoxFit.contain,
-                      height: 45,
-                      width: 45,
                     ),
                   ),
                   Expanded(

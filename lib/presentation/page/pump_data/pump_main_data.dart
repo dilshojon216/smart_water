@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 
 import '../../cubit/signin_well_cubit/sign_in_well_cubit.dart';
 import 'widgets/custom_search_delegate_mqtt.dart';
@@ -69,7 +71,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                         posts,
                       ));
                 } else {
-                  show("Ma'lumotlar to'liq o'qib bo'linmadi");
+                  show(LocaleKeys.water_data_text_1.tr());
                 }
               },
               icon: Icon(Icons.search,
@@ -86,7 +88,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                 if (wellIMEiList.length == postsCount) {
                   showInfo(posts);
                 } else {
-                  show("Ma'lumotlar to'liq o'qib bo'linmadi");
+                  show(LocaleKeys.water_data_text_1.tr());
                 }
               },
               icon: Icon(Icons.info_outlined,
@@ -106,7 +108,7 @@ class _PumpMainDataState extends State<PumpMainData> {
               PopupMenuItem(
                 value: '1',
                 child: Text(
-                  "Ma'lumotlar tahlilli",
+                  LocaleKeys.water_data_text_2.tr(),
                   style: GoogleFonts.roboto(
                       fontSize: 18.0,
                       color: Colors.black,
@@ -116,7 +118,7 @@ class _PumpMainDataState extends State<PumpMainData> {
               PopupMenuItem(
                 value: '2',
                 child: Text(
-                  'Chiqish',
+                  LocaleKeys.water_data_text_3.tr(),
                   style: GoogleFonts.roboto(
                       fontSize: 18.0,
                       color: Colors.black,
@@ -155,7 +157,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Smart Well ma'lumotlari hali ulanmagan",
+                        LocaleKeys.well_data_text_1.tr(),
                         style: GoogleFonts.roboto(
                             color: Theme.of(context).primaryColor,
                             fontSize: 16,
@@ -172,7 +174,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                           showLogin();
                         },
                         child: Text(
-                          "Tizimga kirish",
+                          LocaleKeys.water_data_text_5.tr(),
                           style: GoogleFonts.roboto(
                               color: Colors.white,
                               fontSize: 16,
@@ -202,7 +204,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                     waterMqttModels: posts,
                   )));
     } else {
-      show("Ma'lumotlar to'liq o'qib bo'linmadi");
+      show(LocaleKeys.water_data_text_1.tr());
     }
   }
 
@@ -228,7 +230,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Login",
+                    LocaleKeys.login_alert_1.tr(),
                   ),
                   IconButton(
                       onPressed: () {
@@ -265,7 +267,7 @@ class _PumpMainDataState extends State<PumpMainData> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Ma'lumotlar",
+                    LocaleKeys.water_data_text_6.tr(),
                     style: GoogleFonts.roboto(
                         fontSize: 20.0,
                         color: Theme.of(context).primaryColor,

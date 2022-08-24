@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../core/other/constants.dart';
 import '../model/last_data_water.dart';
 import '../model/mqtt_user_token.dart';
@@ -13,7 +16,9 @@ import 'package:http/http.dart' as http;
 class WaterClinet {
   Future<WaterUserToken> getUserToken(String username, String password) async {
     try {
-      var response = await http.post(Uri.parse("${BASICURL}login"),
+      String apiBase = await _getApiBase();
+
+      var response = await http.post(Uri.parse("${apiBase}login"),
           body: {"username": username, "password": password});
       if (response.statusCode == 200) {
         if (response.body != "false") {
@@ -35,13 +40,12 @@ class WaterClinet {
   Future<MqttUserToken> getUserMqttToken(
       String username, String password) async {
     try {
+      String apiBase = await _getApiMqttBase();
       var map = <String, dynamic>{};
       map['username'] = username;
       map['password'] = password;
-
-      var response = await http.post(
-          Uri.parse("http://185.196.214.190/mqtt/api/auth2.php"),
-          body: map);
+      print(apiBase);
+      var response = await http.post(Uri.parse(apiBase), body: map);
       if (response.statusCode == 200) {
         if (response.body != "false") {
           var data = json.decode(response.body);
@@ -62,8 +66,9 @@ class WaterClinet {
   static const LASTDATA_LIMIT = 10;
   Future<LastDataWater> getLastData(String? token, int page) async {
     try {
+      String apiBase = await _getApiBase();
       var response = await http.get(
-        Uri.parse("${BASICURL}v1/stations?page=$page&per-page=$LASTDATA_LIMIT"),
+        Uri.parse("${apiBase}v1/stations?page=$page&per-page=$LASTDATA_LIMIT"),
         headers: {
           "Authorization": "Bearer $token",
         },
@@ -88,9 +93,9 @@ class WaterClinet {
     int page,
   ) async {
     try {
+      String apiBase = await _getApiBase();
       var response = await http.get(
-        Uri.parse(
-            "${BASICURL}v1/stations?page=$page&per-page=$LASTDATA_LIMIT1"),
+        Uri.parse("${apiBase}v1/stations?page=$page&per-page=$LASTDATA_LIMIT1"),
         headers: {
           "Authorization": "Bearer $token",
         },
@@ -112,8 +117,9 @@ class WaterClinet {
   Future<WaterDataToyday> getWaterDataToyday(
       String? token, String? id, String date) async {
     try {
+      String apiBase = await _getApiBase();
       var response =
-          await http.post(Uri.parse("${BASICURL}v1/data/soatlik"), headers: {
+          await http.post(Uri.parse("${apiBase}v1/data/soatlik"), headers: {
         "Authorization": "Bearer $token",
       }, body: {
         "st_id": id,
@@ -137,8 +143,9 @@ class WaterClinet {
   Future<WaterDataTenDay> getWaterDataTenDay(
       String? token, String? id, String date) async {
     try {
+      String apiBase = await _getApiBase();
       var response =
-          await http.post(Uri.parse("${BASICURL}v1/data/decada"), headers: {
+          await http.post(Uri.parse("${apiBase}v1/data/decada"), headers: {
         "Authorization": "Bearer $token",
       }, body: {
         "st_id": id,
@@ -162,8 +169,9 @@ class WaterClinet {
   Future<WaterDataMonths> getWaterDataMonth(
       String? token, String? id, String date) async {
     try {
+      String apiBase = await _getApiBase();
       var response =
-          await http.post(Uri.parse("${BASICURL}v1/data/oylik"), headers: {
+          await http.post(Uri.parse("${apiBase}v1/data/oylik"), headers: {
         "Authorization": "Bearer $token",
       }, body: {
         "st_id": id,
@@ -189,8 +197,9 @@ class WaterClinet {
     String? id,
   ) async {
     try {
+      String apiBase = await _getApiBase();
       var response =
-          await http.post(Uri.parse("${BASICURL}v1/data/yillik"), headers: {
+          await http.post(Uri.parse("${apiBase}v1/data/yillik"), headers: {
         "Authorization": "Bearer $token",
       }, body: {
         "st_id": id,
@@ -204,6 +213,64 @@ class WaterClinet {
       }
     } catch (e) {
       throw e.toString();
+    }
+  }
+
+  Future<String> getAPiHttpWater() async {
+    //use a Async-await function to get the data
+    final prefs = await SharedPreferences.getInstance();
+    String? api = prefs.getString(APIBASE);
+
+    if (api == "" || api == null) {
+      final data = await FirebaseFirestore.instance
+          .collection("api_http_water")
+          .doc("ynSXNfNFPYLDNv9OWxw7")
+          .get(); //get the data
+
+      api = data.data()!["name"];
+      print(api);
+      prefs.setString(APIBASE, api!);
+    }
+    return api;
+  }
+
+  Future<String> _getApiBase() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? urlSting = prefs.getString(APIBASE);
+
+    if (urlSting == null || urlSting.isEmpty) {
+      return getAPiHttpWater();
+    } else {
+      return urlSting;
+    }
+  }
+
+  Future<String> getAPiMqttWater() async {
+    //use a Async-await function to get the data
+    final prefs = await SharedPreferences.getInstance();
+    String? api = prefs.getString(APIBASE1);
+
+    if (api == "" || api == null) {
+      final data = await FirebaseFirestore.instance
+          .collection("api_mqtt_water")
+          .doc("qx9hYcCeuRolSwDwqpV9")
+          .get(); //get the data
+
+      api = data.data()!["name"];
+      print(api);
+      prefs.setString(APIBASE1, api!);
+    }
+    return api;
+  }
+
+  Future<String> _getApiMqttBase() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? urlSting = prefs.getString(APIBASE1);
+
+    if (urlSting == null || urlSting.isEmpty) {
+      return getAPiMqttWater();
+    } else {
+      return urlSting;
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:smart_water/presentation/page/bluetooth_terminal/bluetooth_terminal.dart';
 import 'package:smart_water/presentation/page/change_language/change_language.dart';
 import 'package:smart_water/presentation/page/home_page/home_page.dart';
@@ -13,12 +14,14 @@ import 'package:smart_water/presentation/page/well_data/well_main_data.dart';
 
 import '../../translations/locale_keys.g.dart';
 
+import '../cubit/sign_in_pump_cubit/signin_pump_cubit.dart';
 import '../cubit/sign_in_water_cubit/sign_in_water_cubit.dart';
 import '../page/device_settings/device_main_settings.dart';
 import '../page/device_settings/widgets/water_device_conntion.dart';
 import '../page/splash_page/splash_page.dart';
 
 import '../page/water_flow_calc/water_flow_calc.dart';
+import '../page/well_data/pump_viewmodel.dart';
 
 class AppRoutesNames {
   static const String splashPage = "/splashPage";
@@ -67,36 +70,21 @@ class AppRoutes {
           settings: const RouteSettings(name: AppRoutesNames.selectLangPage),
           builder: (_) => const SelectLanguagePage(),
         );
-      // case AppRoutesNames.waterMainData:
-      //   return MaterialPageRoute(
-      //     settings: const RouteSettings(name: AppRoutesNames.waterMainData),
-      //     builder: (_) => MultiBlocProvider(
-      //       providers: [
-      //         BlocProvider<SignInWaterCubit>(
-      //           create: (_) => SignInWaterCubit(),
-      //         ),
-      //       ],
-      //       child: WaterDataMain(
-      //         title: LocaleKeys.water_main_title.tr(),
-      //       ),
-      //     ),
-      //   );
 
       case AppRoutesNames.wellMainData:
         return MaterialPageRoute(
-          settings: const RouteSettings(name: AppRoutesNames.wellMainData),
-          builder: (_) => WellMainData(
-            title: LocaleKeys.well_main_title.tr(),
+          settings:
+              RouteSettings(name: AppRoutesNames.wellMainData, arguments: args),
+          builder: (_) => BlocProvider(
+            create: (context) => SignInPumpCubit(),
+            child: ChangeNotifierProvider(
+              create: (context) => PumpViewModel(),
+              child: WellMainData(
+                title: LocaleKeys.pump_main_title.tr(),
+              ),
+            ),
           ),
         );
-
-      // case AppRoutesNames.pumpMainData:
-      //   return MaterialPageRoute(
-      //     settings: const RouteSettings(name: AppRoutesNames.pumpMainData),
-      //     builder: (_) => PumpMainData(
-      //       title: LocaleKeys.pump_main_title.tr(),
-      //     ),
-      //   );
 
       case AppRoutesNames.deviceSettings:
         return MaterialPageRoute(
@@ -137,13 +125,6 @@ class AppRoutes {
             title: "Qurilma bilan bog'lanish",
           ),
         );
-
-      // case AppRoutesNames.deviceDashobordWater:
-      //   return MaterialPageRoute(
-      //     settings: RouteSettings(
-      //         name: AppRoutesNames.deviceDashobordWater, arguments: args),
-      //     builder: (_) => DeviceDashboradWater(),
-      //   );
 
       case AppRoutesNames.deviceDashobordTeminalWater:
         return MaterialPageRoute(

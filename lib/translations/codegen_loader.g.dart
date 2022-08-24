@@ -84,7 +84,7 @@ class CodegenLoader extends AssetLoader{
   "info_alert_text_4": "Bir oy oraliqda ishlagan qurilmalar soni:",
   "info_alert_text_5": "Uzoq muddat oldin ishlagan qurilmalar soni:",
   "info_alert_text_6": "Umuman ishlamagn qurilmalar soni:",
-  "more_btn_text": "Batafsil ma'lumot",
+  "more_btn_text": "Batafsil ",
   "send_message_text": "Xabar jo'natish",
   "nodate_text": "Ma'lumot yo'q",
   "dashboard_mqtt_text_1": "Bugun ishlagan",
@@ -94,7 +94,15 @@ class CodegenLoader extends AssetLoader{
   "dashboard_mqtt_text_5": "Umuman ishlamagan",
   "dashboard_mqtt_text_6": "Qurilmalarning umumiy xolati",
   "dashboard_mqtt_text_7": "Nomi:",
-  "dashboard_mqtt_text_8": "Ma'lumot vaqti:"
+  "dashboard_mqtt_text_8": "Ma'lumot vaqti:",
+  "well_data_text_1": "Smart Well ma'lumotlari hali ulanmagan",
+  "well_data_text_2": "Temperatura (°C):",
+  "well_data_text_3": "Sho'rlanganlik (g/l):",
+  "well_data_text_4": "Sho'rlanish:",
+  "temp_title_text": "Temperatura:",
+  "pump_text_1": "Nasos stansiyalar ma'lumotlari hali ulanmagan",
+  "pump_text_2": "Jami suv sarfi:",
+  "pump_text_3": "Musbat suv sarfi:"
 };
 static const Map<String,dynamic> ru = {
   "water_main_title": "Посты контроля воды",
@@ -166,7 +174,7 @@ static const Map<String,dynamic> ru = {
   "info_alert_text_4": "Количество устройств, которые работали в течение месяца:",
   "info_alert_text_5": "Количество устройств, которые работали давно:",
   "info_alert_text_6": "Общее количество работающих устройств:",
-  "more_btn_text": "учить больше",
+  "more_btn_text": "Более",
   "send_message_text": "Послать сообщение",
   "nodate_text": "Нет информации",
   "dashboard_mqtt_text_1": "Работал сегодня",
@@ -176,7 +184,15 @@ static const Map<String,dynamic> ru = {
   "dashboard_mqtt_text_5": "Это вообще не сработало",
   "dashboard_mqtt_text_6": "Общее состояние устройств",
   "dashboard_mqtt_text_7": "Имя:",
-  "dashboard_mqtt_text_8": "Время информации:"
+  "dashboard_mqtt_text_8": "Время информации:",
+  "well_data_text_1": "Данные Smart Well еще не подключены",
+  "well_data_text_2": "Температура (°С):",
+  "well_data_text_3": "Соленость (г/л):",
+  "well_data_text_4": "Соленость:",
+  "temp_title_text": "Температура:",
+  "pump_text_1": "Данные насосных станций еще не подключены",
+  "pump_text_2": "Общий расход воды:",
+  "pump_text_3": "Положительный расход воды:"
 };
 static const Map<String,dynamic> uz = {
   "water_main_title": "Сув назорат постлари",
@@ -248,7 +264,7 @@ static const Map<String,dynamic> uz = {
   "info_alert_text_4": "Бир ой оралиқда ишлаган қурилмалар сони:",
   "info_alert_text_5": "Узоқ муддат олдин ишлаган қурилмалар сони:",
   "info_alert_text_6": "Умуман ишламагн қурилмалар сони:",
-  "more_btn_text": "Батафсил маълумот",
+  "more_btn_text": "Батафсил ",
   "send_message_text": "Хабар жўнатиш",
   "nodate_text": "Маълумот йўқ",
   "dashboard_mqtt_text_1": "Бугун ишлаган",
@@ -258,7 +274,15 @@ static const Map<String,dynamic> uz = {
   "dashboard_mqtt_text_5": "Умуман ишламаган",
   "dashboard_mqtt_text_6": "Қурилмаларнинг умумий холати",
   "dashboard_mqtt_text_7": "Номи:",
-  "dashboard_mqtt_text_8": "Маълумот вақти:"
+  "dashboard_mqtt_text_8": "Маълумот вақти:",
+  "well_data_text_1": "Смарт Велл маълумотлари ҳали уланмаган",
+  "well_data_text_2": "Температура (°С):",
+  "well_data_text_3": "Шўрланганлик (г/л):",
+  "well_data_text_4": "Шўрланиш:",
+  "temp_title_text": "Температура:",
+  "pump_text_1": "Насос станциялар маълумотлари ҳали уланмаган",
+  "pump_text_2": "Жами сув сарфи:",
+  "pump_text_3": "Мусбат сув сарфи:"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ru": ru, "uz": uz};
 }

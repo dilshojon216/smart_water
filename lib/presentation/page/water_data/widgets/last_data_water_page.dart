@@ -49,8 +49,6 @@ class _LastDataWaterPageState extends State<LastDataWaterPage> {
     super.initState();
     initValue();
     _pagingController.addPageRequestListener((pageKey) {
-      print("pageKey: $pageKey");
-
       _fetchPage(pageKey);
     });
 
@@ -82,9 +80,9 @@ class _LastDataWaterPageState extends State<LastDataWaterPage> {
       final newItems = await _waterClinet.getLastData(token, pageKey);
 
       int _pageSize = newItems.pagination.pageCount;
-      print("_pageSize: $_pageSize");
+
       final isLastPage = pageKey >= _pageSize;
-      print("isLastPage: $isLastPage");
+
       if (isLastPage) {
         _pagingController.appendLastPage(newItems.stations);
       } else {
@@ -496,6 +494,7 @@ void onStart(ServiceInstance service) async {
           pageTotal = stations.pagination.pageCount;
           int countTotal = stations.pagination.totalCount;
           print(stations.stations.length.toString() +
+              "ddddddddd" +
               waterInfoList.length.toString());
           countPage++;
 

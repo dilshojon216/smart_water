@@ -25,5 +25,10 @@ class WaterHttpModel extends ChangeNotifier {
     }
   }
 
+  void changeWaterInfo(List<WaterInfo> value) {
+    waterInfoList = value;
+    notifyListeners();
+  }
+
   List<WaterInfo> get waterInfoLists => waterInfoList;
 }

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -14,6 +15,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_water/presentation/page/pump_data/widgets/pump_model_mqtt_data.dart';
 import 'package:smart_water/presentation/page/pump_data/widgets/stations_mqtt_well_data.dart';
 import 'package:smart_water/presentation/page/water_data/widgets/no_internet_widget.dart';
+import 'package:smart_water/translations/locale_keys.g.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../data/model/water_mqtt_info.dart';
@@ -202,7 +204,7 @@ class _LastMqttDataWellState extends State<LastMqttDataWell> {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Suv sathi:",
+                        LocaleKeys.mqtt_all_water_text_1.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -232,7 +234,7 @@ class _LastMqttDataWellState extends State<LastMqttDataWell> {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Sho'rlanish:",
+                        LocaleKeys.well_data_text_4.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -262,7 +264,7 @@ class _LastMqttDataWellState extends State<LastMqttDataWell> {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Temperatura:",
+                        LocaleKeys.temp_title_text.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -292,7 +294,7 @@ class _LastMqttDataWellState extends State<LastMqttDataWell> {
                     Expanded(
                       flex: 5,
                       child: AutoSizeText(
-                        "Vaqti:",
+                        LocaleKeys.vaqt_data_text_1.tr(),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
                             fontSize: 18.0,
@@ -334,12 +336,12 @@ class _LastMqttDataWellState extends State<LastMqttDataWell> {
 
       if (kF < 700) {
         if (kF == 0) {
-          return "0 g/L";
+          return "0 g/l";
         } else {
-          return "${((kF - 27) / 350.0).toStringAsFixed(3)} g/L";
+          return "${((kF - 27) / 350.0).toStringAsFixed(3)} g/l";
         }
       } else {
-        return "${((kF - 40) / 380.0).toStringAsFixed(3)} g/L";
+        return "${((kF - 40) / 380.0).toStringAsFixed(3)} g/l";
       }
     } catch (e) {
       print(e);
