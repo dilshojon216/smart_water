@@ -43,18 +43,11 @@ class _SplashPageState extends State<SplashPage> {
     GetRegionClient getRegionClient = GetRegionClient();
     String? firstInstall = _prefs.getString("firstInstall").toString();
 
-    print(firstInstall);
-
     if (firstInstall != "true") {
       _prefs = await SharedPreferences.getInstance();
 
-      String? sensorType = _prefs.getString("SensorType").toString();
-      if (sensorType != "true") {
-        int value = await getSensorTypeClinet.saveSensorType();
-        if (value == 0) {
-          _prefs.setString("SensorType", "true");
-        }
-      }
+      await getSensorTypeClinet.saveSensorType();
+
       String? district = _prefs.getString("District").toString();
       if (district != "true") {
         int value = await getDistrictClient.saveDistrict();
@@ -72,7 +65,6 @@ class _SplashPageState extends State<SplashPage> {
       }
       _prefs.setString("firstInstall", "true");
     }
-    initValue2();
   }
 
   initValue2() async {
@@ -86,13 +78,12 @@ class _SplashPageState extends State<SplashPage> {
     } else {
       typeWaterData = "2";
     }
-    print(typeWaterData);
   }
 
   @override
   void initState() {
     super.initState();
-    initValue();
+    initValue2();
 
     _timer = Timer(const Duration(seconds: 2), () {
       if (setLanguage == "true") {

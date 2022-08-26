@@ -1,6 +1,6 @@
 import 'package:floor/floor.dart';
 
-@entity
+@Entity(tableName: "sensorType")
 class SensorType {
   @PrimaryKey(autoGenerate: true)
   final int? id;

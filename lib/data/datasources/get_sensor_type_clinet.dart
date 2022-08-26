@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_water/data/db/database/smart_water_database.dart';
 import 'package:smart_water/data/model/sensor_type.dart';
 
@@ -25,15 +26,25 @@ class GetSensorTypeClinet {
   }
 
   Future<int> saveSensorType() async {
-    List<String?> sensorType = await getSensorType();
-    final database = await $FloorSmartWaterDatabase
-        .databaseBuilder('app_database.db')
-        .build();
-    final dao = database.sensorTypeDao;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    for (var i = 0; i < sensorType.length; i++) {
-      final result = await dao.insert(SensorType(name: sensorType[i]!));
-      print(result);
+    String? sensorType1 = prefs.getString("SensorType").toString();
+    if (sensorType1 != "true") {
+      List<String?> sensorType = await getSensorType();
+
+      final database = await $FloorSmartWaterDatabase
+          .databaseBuilder('app_database.db')
+          .build();
+      final dao = database.sensorTypeDao;
+      await dao.deletetAll();
+      List<SensorType> newdata = [];
+
+      for (var i = 0; i < sensorType.length; i++) {
+        print(sensorType[i]);
+        newdata.add(SensorType(name: sensorType[i]!));
+      }
+      await dao.insertAll(newdata);
+      prefs.setString("SensorType", "true");
     }
     return 0;
   }

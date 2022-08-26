@@ -37,11 +37,6 @@ class GetRegionClient {
     });
     await dao.insertAll(newData);
 
-    // List<Region?> getda = await dao.getAll();
-    // getda.forEach((element) {
-    //   print(element!.name);
-    // });
-
     return 0;
   }
 }

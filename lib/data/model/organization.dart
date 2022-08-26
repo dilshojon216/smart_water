@@ -9,10 +9,10 @@ class Organization {
   });
 
   Organization.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        regionId = json['regionId'] == null
+      : id = int.parse(json['id']),
+        regionId = json['region'] == null
             ? json["region_id"]
-            : int.parse(json["regionId"]),
+            : int.parse(json["region"]),
         name = json['name'];
 
   List<Organization> fromJsonList(List<dynamic> json) {

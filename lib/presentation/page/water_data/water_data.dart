@@ -1,18 +1,21 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_water/presentation/page/water_data/widgets/mqtt_search_delegate.dart';
 
 import 'package:smart_water/presentation/page/water_data/widgets/water_mqtt_all.dart';
 import 'package:smart_water/translations/locale_keys.g.dart';
 
+import '../../../data/datasources/get_district_clinet.dart';
+import '../../../data/datasources/get_region_clinet.dart';
+import '../../../data/datasources/get_sensor_type_clinet.dart';
+import '../../../data/db/database/smart_water_database.dart';
 import '../../../data/model/water_info.dart';
 import '../../cubit/last_water_data_cubit/last_water_data_cubit.dart';
 import '../../cubit/sign_in_water_cubit/sign_in_water_cubit.dart';
@@ -53,11 +56,11 @@ class _WaterDataMainState extends State<WaterDataMain> {
   void initState() {
     super.initState();
     initValue();
+    initValue2();
     //getData();
   }
 
   void initValue() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       typeWaterData = widget.typeData;
     });
@@ -72,6 +75,37 @@ class _WaterDataMainState extends State<WaterDataMain> {
     showSearch(
         context: context,
         delegate: CustomSearchDelegate(posts, internetConnection));
+  }
+
+  initValue2() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+
+    String? firstInstall = _prefs.getString("firstInstall").toString();
+
+    if (firstInstall != "true") {
+      GetSensorTypeClinet getSensorTypeClinet = GetSensorTypeClinet();
+      GetDistrictClient getDistrictClient = GetDistrictClient();
+      GetRegionClient getRegionClient = GetRegionClient();
+
+      await getSensorTypeClinet.saveSensorType();
+
+      String? district = _prefs.getString("District").toString();
+      if (district != "true") {
+        int value = await getDistrictClient.saveDistrict();
+        if (value == 0) {
+          _prefs.setString("District", "true");
+        }
+      }
+
+      String? region = _prefs.getString("Region").toString();
+      if (region != "true") {
+        int value = await getRegionClient.saveRegion();
+        if (value == 0) {
+          _prefs.setString("Region", "true");
+        }
+      }
+      _prefs.setString("firstInstall", "true");
+    }
   }
 
   @override

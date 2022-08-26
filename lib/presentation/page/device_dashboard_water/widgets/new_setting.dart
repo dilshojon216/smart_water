@@ -122,7 +122,8 @@ class _NewSettingsFileState extends State<NewSettingsFile> {
     final dao = database.sensorTypeDao;
     final result = await dao.getAll();
     //print("sdasd");
-    // print(result);
+    print(result);
+
     setState(() {
       sensorType = result;
     });

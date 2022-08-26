@@ -27,9 +27,7 @@ class GetDistrictClient {
 
   Future<int> saveDistrict() async {
     List<District?> sensorType = await getSensorType();
-    sensorType.forEach((element) {
-      print(element!.name);
-    });
+
     final database = await $FloorSmartWaterDatabase
         .databaseBuilder('app_database.db')
         .build();

@@ -88,11 +88,11 @@ class _$SmartWaterDatabase extends SmartWaterDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `SensorType` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `sensorType` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `District` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `regionId` INTEGER NOT NULL, `name` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `district` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `regionId` INTEGER NOT NULL, `name` TEXT NOT NULL)');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Region` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `region` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `pump_stations` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `regionId` INTEGER NOT NULL, `discretId` INTEGER NOT NULL, `balanceId` INTEGER NOT NULL, `topic` TEXT NOT NULL)');
 
@@ -129,12 +129,12 @@ class _$SensorTypeDao extends SensorTypeDao {
       : _queryAdapter = QueryAdapter(database),
         _sensorTypeInsertionAdapter = InsertionAdapter(
             database,
-            'SensorType',
+            'sensorType',
             (SensorType item) =>
                 <String, Object?>{'id': item.id, 'name': item.name}),
         _sensorTypeUpdateAdapter = UpdateAdapter(
             database,
-            'SensorType',
+            'sensorType',
             ['id'],
             (SensorType item) =>
                 <String, Object?>{'id': item.id, 'name': item.name});
@@ -151,15 +151,26 @@ class _$SensorTypeDao extends SensorTypeDao {
 
   @override
   Future<List<SensorType?>> getAll() async {
-    return _queryAdapter.queryList('SELECT * FROM SensorType',
+    return _queryAdapter.queryList('SELECT * FROM sensorType',
         mapper: (Map<String, Object?> row) =>
             SensorType(id: row['id'] as int?, name: row['name'] as String));
+  }
+
+  @override
+  Future<void> deletetAll() async {
+    await _queryAdapter.queryNoReturn('DELETE FROM sensorType');
   }
 
   @override
   Future<int> insert(SensorType demise) {
     return _sensorTypeInsertionAdapter.insertAndReturnId(
         demise, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> insertAll(List<SensorType> data) async {
+    await _sensorTypeInsertionAdapter.insertList(
+        data, OnConflictStrategy.abort);
   }
 
   @override
@@ -174,7 +185,7 @@ class _$DistrictDao extends DistrictDao {
       : _queryAdapter = QueryAdapter(database),
         _districtInsertionAdapter = InsertionAdapter(
             database,
-            'District',
+            'district',
             (District item) => <String, Object?>{
                   'id': item.id,
                   'regionId': item.regionId,
@@ -182,7 +193,7 @@ class _$DistrictDao extends DistrictDao {
                 }),
         _districtUpdateAdapter = UpdateAdapter(
             database,
-            'District',
+            'district',
             ['id'],
             (District item) => <String, Object?>{
                   'id': item.id,
@@ -243,12 +254,12 @@ class _$RegionDao extends RegionDao {
       : _queryAdapter = QueryAdapter(database),
         _regionInsertionAdapter = InsertionAdapter(
             database,
-            'Region',
+            'region',
             (Region item) =>
                 <String, Object?>{'id': item.id, 'name': item.name}),
         _regionUpdateAdapter = UpdateAdapter(
             database,
-            'Region',
+            'region',
             ['id'],
             (Region item) =>
                 <String, Object?>{'id': item.id, 'name': item.name});
