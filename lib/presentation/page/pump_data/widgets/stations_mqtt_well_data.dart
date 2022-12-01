@@ -1,5 +1,5 @@
-import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -160,7 +160,9 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
                   cardSecondWidget(
                       context,
                       LocaleKeys.well_data_text_3.tr(),
-                      widget.mqttModel.data != null ? getShorlanish() : "",
+                      widget.mqttModel.data != null
+                          ? getShorlanish(widget.mqttModel)
+                          : "",
                       'assets/images/speed_water.png',
                       asad: 4),
                   Expanded(
@@ -473,26 +475,105 @@ class _StationsMqttWellDataState extends State<StationsMqttWellData> {
     }
   }
 
-  getShorlanish() {
+  getShorlanish(WellMqttModel ss) {
     try {
-      double tempInt = int.parse(widget.mqttModel.data!.q) / 10.0;
-      double dataSh = double.parse(widget.mqttModel.data!.q);
+      String? version = ss.info!.p11;
+      double tempInt = int.parse(ss.data!.q) / 10.0;
+      double dataSh = 0.0;
+      if (version == "SW1.9") {
+        dataSh = double.parse(ss.data!.r);
+      } else {
+        dataSh = double.parse(ss.data!.r) / 1000.0;
+      }
 
       double kFF = 1.0 + 0.02 * (tempInt - 25);
       double kF = dataSh / kFF;
+      print(dataSh);
 
-      if (kF < 700) {
-        if (kF == 0) {
-          return "0 g/L";
+      String? sensorType = ss.info!.p17;
+
+      if (sensorType != null) {
+        if (sensorType == "WellVer3" || sensorType == "SWellVer3") {
+          num data = (0.0358 * pow(dataSh, 1.27803) + 565.28) / 1000.0;
+
+          return "${data.toStringAsFixed(3)}";
+        } else if (sensorType == "Wellver2") {
+          num data = (0.1005 * pow(dataSh, 1.192) + 430) / 1000;
+
+          return "${data.toStringAsFixed(3)} ";
+        } else if (sensorType == "Wellver") {
+          if (kF < 700) {
+            if (kF == 0) {
+              return "0 ";
+            } else {
+              return "${((kF - 27) / 350.0).toStringAsFixed(3)} ";
+            }
+          } else {
+            return "${((kF - 40) / 380.0).toStringAsFixed(3)} ";
+          }
+        } else if (version == "SW1.9") {
+          if (kF < 700) {
+            if (kF == 0) {
+              return "0 ";
+            } else {
+              return "${((kF - 27) / 350.0).toStringAsFixed(3)}";
+            }
+          } else {
+            return "${((kF - 40) / 380.0).toStringAsFixed(3)} ";
+          }
+        } else if (version == "SW1.12") {
+          num data = (0.0358 * pow(dataSh, 1.27803) + 565.28) / 1000.0;
+
+          return "${data.toStringAsFixed(3)} ";
+        } else if (version == "SW1.10") {
+          num data = (0.1005 * pow(dataSh, 1.192) + 430) / 1000;
+
+          return "${data.toStringAsFixed(3)} ";
         } else {
-          return "${((kF - 27) / 350.0).toStringAsFixed(3)} g/L";
+          if (kF < 700) {
+            if (kF == 0) {
+              return "0 ";
+            } else {
+              return "${((kF - 27) / 350.0).toStringAsFixed(3)} ";
+            }
+          } else {
+            return "${((kF - 40) / 380.0).toStringAsFixed(3)} ";
+          }
         }
       } else {
-        return "${((kF - 40) / 380.0).toStringAsFixed(3)} g/l";
+        if (version == "SW1.9") {
+          if (kF < 700) {
+            if (kF == 0) {
+              return "0 g/L";
+            } else {
+              return "${((kF - 27) / 350.0).toStringAsFixed(3)} ";
+            }
+          } else {
+            return "${((kF - 40) / 380.0).toStringAsFixed(3)} ";
+          }
+        } else if (version == "SW1.12") {
+          num data = (0.0358 * pow(dataSh, 1.27803) + 565.28) / 1000.0;
+
+          return "${data.toStringAsFixed(3)} ";
+        } else if (version == "SW1.10") {
+          num data = (0.1005 * pow(dataSh, 1.192) + 430) / 1000;
+
+          return "${data.toStringAsFixed(3)} ";
+        } else {
+          if (kF < 700) {
+            if (kF == 0) {
+              return "0 g/L";
+            } else {
+              return "${((kF - 27) / 350.0).toStringAsFixed(3)} ";
+            }
+          } else {
+            return "${((kF - 40) / 380.0).toStringAsFixed(3)} ";
+          }
+        }
       }
     } catch (e) {
       print(e);
-      return "";
+      return ss.data!.r;
     }
   }
 

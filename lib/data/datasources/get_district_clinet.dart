@@ -8,6 +8,7 @@ import '../db/database/smart_water_database.dart';
 class GetDistrictClient {
   Future<List<District?>> getSensorType() async {
     try {
+      // ignore: constant_identifier_names
       const String APIBASE = "https://suvombor.uz:5002/api/";
       var response =
           await http.get(Uri.parse("${APIBASE}district/getDistrict"));
@@ -20,25 +21,28 @@ class GetDistrictClient {
         throw Exception('Failed to load post');
       }
     } catch (e) {
-      print(e);
       throw e.toString();
     }
   }
 
   Future<int> saveDistrict() async {
-    List<District?> sensorType = await getSensorType();
+    try {
+      List<District?> sensorType = District.getDistricts();
 
-    final database = await $FloorSmartWaterDatabase
-        .databaseBuilder('app_database.db')
-        .build();
-    final dao = database.districtDao;
-    List<District> newData = [];
-    sensorType.forEach((element) {
-      newData.add(District(name: element!.name, regionId: element.regionId));
-    });
+      final database = await $FloorSmartWaterDatabase
+          .databaseBuilder('app_database.db')
+          .build();
+      final dao = database.districtDao;
+      List<District> newData = [];
+      for (var element in sensorType) {
+        newData.add(District(name: element!.name, regionId: element.regionId));
+      }
 
-    await dao.insertAll(newData);
-
-    return 0;
+      await dao.insertAll(newData);
+      print("saved");
+      return 0;
+    } catch (e) {
+      throw e.toString();
+    }
   }
 }

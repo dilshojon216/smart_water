@@ -17,6 +17,7 @@ class WaterMqttInfo {
   late final String p14;
   late final String p15;
   late final String p16;
+  String? p17;
 
   WaterMqttInfo({
     required this.i,
@@ -37,6 +38,7 @@ class WaterMqttInfo {
     required this.p14,
     required this.p15,
     required this.p16,
+    this.p17,
   });
 
   WaterMqttInfo.fromJson(Map<String, dynamic> json) {
@@ -58,6 +60,7 @@ class WaterMqttInfo {
     p14 = json['p14'];
     p15 = json['p15'];
     p16 = json['p16'];
+    p17 = json['p17'] == null ? null : json['p17'];
   }
 
   Map<String, dynamic> toJson() {

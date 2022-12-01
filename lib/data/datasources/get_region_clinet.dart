@@ -8,6 +8,7 @@ import '../model/region.dart';
 class GetRegionClient {
   Future<List<Region?>> getSensorType() async {
     try {
+      // ignore: constant_identifier_names
       const String APIBASE = "https://suvombor.uz:5002/api/";
       var response = await http.get(Uri.parse("${APIBASE}region/getReg"));
       if (response.statusCode == 200) {
@@ -25,7 +26,7 @@ class GetRegionClient {
   }
 
   Future<int> saveRegion() async {
-    List<Region?> sensorType = await getSensorType();
+    List<Region?> sensorType = Region.getRegions();
     final database = await $FloorSmartWaterDatabase
         .databaseBuilder('app_database.db')
         .build();

@@ -39,12 +39,12 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
   initValue2() async {
     waterInstall = _prefs.getString("waterInstall").toString() == "true";
 
+    // ignore: unnecessary_null_comparison
     if (_prefs.getInt("valueWater").toString() == null) {
       typeWaterData = "1";
     } else {
       typeWaterData = _prefs.getInt("valueWater").toString();
     }
-    print(typeWaterData);
   }
 
   setLanguage(String text) {

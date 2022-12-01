@@ -143,22 +143,13 @@ class _AppBarWellState extends State<AppBarWell> {
     );
   }
 
-  Future show(
+  show(
     String message, {
     Duration duration = const Duration(seconds: 3),
   }) async {
-    await Future.delayed(const Duration(milliseconds: 100));
-    widget.key1.currentState!.showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: Colors.white,
-        content: Text(
-          message,
-          style: GoogleFonts.roboto(
-              fontSize: 16,
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.w500),
-        ),
-        duration: duration,
+        content: Text(message),
       ),
     );
   }

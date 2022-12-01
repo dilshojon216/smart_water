@@ -347,13 +347,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
     Duration duration = const Duration(seconds: 3),
   }) async {
     await Future.delayed(const Duration(milliseconds: 100));
-    _scaffoldKey.currentState!.showSnackBar(
-      SnackBar(
-        content: Text(
-          message,
-        ),
-        duration: duration,
-      ),
-    );
+    // _scaffoldKey.currentState!.showSnackBar(
+    //   SnackBar(
+    //     content: Text(
+    //       message,
+    //     ),
+    //     duration: duration,
+    //   ),
+    // );
   }
 }

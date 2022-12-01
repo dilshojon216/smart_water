@@ -302,17 +302,13 @@ class _DeviceDashboradWellState extends State<DeviceDashboradWell> {
     );
   }
 
-  Future show(
+  show(
     String message, {
     Duration duration = const Duration(seconds: 3),
-  }) async {
-    await Future.delayed(const Duration(milliseconds: 100));
-    _scaffoldKey.currentState!.showSnackBar(
+  }) {
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(
-          message,
-        ),
-        duration: duration,
+        content: Text(message),
       ),
     );
   }

@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCJXxiJB_gq3MfqT1Th9wpXa9-20R01K9U',
     appId: '1:156682345464:android:fef8e28a2af91c55a3540d',
-    messagingSenderId: '156682345464',
+    messagingSenderId: '755612265293',
     projectId: 'new-smart-water',
   );
 
